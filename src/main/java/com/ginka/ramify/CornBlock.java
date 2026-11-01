@@ -12,7 +12,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
-/** 玉米：种在耕地上，长到 7 可以收喵 */
+/** 玉米：玩家种在耕地上，野外也能长在草地；长到 7 可以收喵 */
 public class CornBlock extends Block {
     public static final IntProperty AGE = IntProperty.of("age", 0, 7);
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 16, 13);
@@ -34,7 +34,13 @@ public class CornBlock extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.FARMLAND);
+        BlockState floor = world.getBlockState(pos.down());
+        // 耕地是玩家种植用的；草地/泥土等让野外生成的玉米也能站住喵
+        return floor.isOf(net.minecraft.block.Blocks.FARMLAND)
+                || floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK)
+                || floor.isOf(net.minecraft.block.Blocks.DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.PODZOL);
     }
 
     @Override

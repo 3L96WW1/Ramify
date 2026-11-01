@@ -46,7 +46,9 @@ public class HempBlock extends Block {
             int age = state.get(AGE);
             if (age < 3) {
                 world.setBlockState(pos, state.with(AGE, age + 1), Block.NOTIFY_LISTENERS);
-            } else if (world.getBlockState(pos.up()).isAir()) {
+            } else if (!world.getBlockState(pos.down()).isOf(this)
+                    && world.getBlockState(pos.up()).isAir()) {
+                // 只允许最下面一节再长高一格，避免无限往上叠喵
                 world.setBlockState(pos.up(), this.getDefaultState(), Block.NOTIFY_LISTENERS);
             }
         }
