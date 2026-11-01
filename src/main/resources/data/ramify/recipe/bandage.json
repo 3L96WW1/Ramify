@@ -10,7 +10,7 @@
       "item": "ramify:hemp_fiber"
     },
     "p": {
-      "item": "minecraft:paper"
+      "tag": "ramify:paper"
     }
   },
   "result": {

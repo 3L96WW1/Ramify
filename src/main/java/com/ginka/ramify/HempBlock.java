@@ -37,7 +37,7 @@ public class HempBlock extends Block {
         BlockState floor = world.getBlockState(pos.down());
         return floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK) || floor.isOf(net.minecraft.block.Blocks.DIRT)
                 || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT) || floor.isOf(net.minecraft.block.Blocks.PODZOL)
-                || floor.isOf(ModBlocks.HEMP);
+                || floor.isOf(this);
     }
 
     @Override

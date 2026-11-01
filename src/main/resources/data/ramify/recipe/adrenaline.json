@@ -1,17 +1,15 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:sugar"
+      "item": "ramify:sisal_fiber"
+    },
+    {
+      "item": "ramify:hemp_fiber"
     },
     {
       "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:glow_berries"
-    },
-    {
-      "item": "minecraft:gunpowder"
     }
   ],
   "result": {

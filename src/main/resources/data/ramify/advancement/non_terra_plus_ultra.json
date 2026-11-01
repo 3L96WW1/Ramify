@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "ramify:adrenaline"
+    },
+    "title": {
+      "text": "Non Terrae Plus Ultra"
+    },
+    "description": {
+      "translate": "advancement.ramify.non_terra_plus_ultra.desc"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "use_adrenaline": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "ramify:adrenaline"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_adrenaline"
+    ]
+  ]
+}

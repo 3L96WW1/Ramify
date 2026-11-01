@@ -9,6 +9,7 @@ public class Ramify implements ModInitializer {
     @Override
     public void onInitialize() {
         ModSounds.register();
+        ModEffects.register();
         ModBlocks.register();
         ModItems.register();
         ModWorldGen.register();

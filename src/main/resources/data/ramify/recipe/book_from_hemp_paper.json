@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ramify:hemp_paper"
+    },
+    {
+      "item": "ramify:hemp_paper"
+    },
+    {
+      "item": "ramify:hemp_paper"
+    },
+    {
+      "item": "minecraft:leather"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:book"
+  }
+}

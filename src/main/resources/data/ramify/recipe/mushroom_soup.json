@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ramify:straw_mushroom"
+    },
+    {
+      "item": "ramify:matsutake"
+    },
+    {
+      "item": "ramify:rapeseed"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "id": "ramify:mushroom_soup",
+    "count": 1
+  }
+}

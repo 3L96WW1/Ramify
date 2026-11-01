@@ -1,0 +1,23 @@
+package com.ginka.ramify;
+
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.Identifier;
+
+/** 自定义状态效果喵 */
+public final class ModEffects {
+    public static final StatusEffect ANTI_INFECTION = new AntiInfectionEffect();
+
+    public static RegistryEntry<StatusEffect> antiInfection() {
+        return Registries.STATUS_EFFECT.getEntry(ANTI_INFECTION);
+    }
+
+    public static void register() {
+        Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "anti_infection"), ANTI_INFECTION);
+    }
+
+    private ModEffects() {
+    }
+}

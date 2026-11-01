@@ -11,10 +11,20 @@ import net.minecraft.util.Identifier;
 public final class ModBlocks {
     public static final Block HEMP = new HempBlock(AbstractBlock.Settings.create()
             .strength(0.2f).nonOpaque().ticksRandomly().noCollision());
+    public static final Block JUTE = new HempBlock(AbstractBlock.Settings.create()
+            .strength(0.2f).nonOpaque().ticksRandomly().noCollision());
+    public static final Block SISAL = new WildPlantBlock(AbstractBlock.Settings.create()
+            .strength(0.2f).nonOpaque().noCollision());
     public static final Block STRAWBERRY_BUSH = new StrawberryBushBlock(AbstractBlock.Settings.create()
             .strength(0.2f).nonOpaque().ticksRandomly().noCollision());
     public static final Block CORN = new CornBlock(AbstractBlock.Settings.create()
             .strength(0.2f).nonOpaque().ticksRandomly().noCollision());
+    public static final Block STRAW_MUSHROOM = new WildPlantBlock(AbstractBlock.Settings.create()
+            .strength(0.1f).nonOpaque().noCollision());
+    public static final Block MATSUTAKE = new WildPlantBlock(AbstractBlock.Settings.create()
+            .strength(0.1f).nonOpaque().noCollision());
+    public static final Block RAPESEED = new WildPlantBlock(AbstractBlock.Settings.create()
+            .strength(0.1f).nonOpaque().noCollision());
     public static final Block WOODEN_SPIKES = new WoodenSpikesBlock(AbstractBlock.Settings.create().strength(1.0f).nonOpaque());
 
     private static void reg(String name, Block block) {
@@ -24,8 +34,13 @@ public final class ModBlocks {
 
     public static void register() {
         reg("hemp", HEMP);
+        reg("jute", JUTE);
+        reg("sisal", SISAL);
         reg("strawberry_bush", STRAWBERRY_BUSH);
         reg("corn", CORN);
+        reg("straw_mushroom", STRAW_MUSHROOM);
+        reg("matsutake", MATSUTAKE);
+        reg("rapeseed", RAPESEED);
         reg("wooden_spikes", WOODEN_SPIKES);
     }
 
