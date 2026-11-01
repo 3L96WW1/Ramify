@@ -28,5 +28,6 @@
     [
       "use_adrenaline"
     ]
-  ]
+  ],
+  "parent": "ramify:root"
 }

@@ -28,5 +28,7 @@
   "advancement.ramify.corn_blight.desc": "收获第一根玉米，想起那片枯萎的田",
   "advancement.ramify.non_terra_plus_ultra.desc": "注射肾上腺素，把极限甩在身后",
   "tag.item.ramify.paper": "纸",
-  "tag.item.c.paper": "纸"
+  "tag.item.c.paper": "纸",
+  "advancement.ramify.root.title": "麻 / Ramify",
+  "advancement.ramify.root.desc": "纤维、绷带与草药"
 }

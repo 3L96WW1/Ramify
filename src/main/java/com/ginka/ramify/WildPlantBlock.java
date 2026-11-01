@@ -32,4 +32,14 @@ public class WildPlantBlock extends Block {
                 || floor.isOf(net.minecraft.block.Blocks.MOSS_BLOCK)
                 || floor.isOf(net.minecraft.block.Blocks.SNOW_BLOCK);
     }
+
+    @Override
+    protected BlockState getStateForNeighborUpdate(BlockState state, net.minecraft.util.math.Direction direction,
+                                                   BlockState neighborState, net.minecraft.world.WorldAccess world,
+                                                   BlockPos pos, BlockPos neighborPos) {
+        if (!this.canPlaceAt(state, world, pos)) {
+            return net.minecraft.block.Blocks.AIR.getDefaultState();
+        }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
 }

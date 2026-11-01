@@ -12,7 +12,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 
-/** 麻：像甘蔗一样长高，但不需要水，只长在草/土上喵 */
+/** 麻：最多两格高，不需要水，只长在草/土上喵 */
 public class HempBlock extends Block {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
     private static final VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 16, 14);
@@ -52,5 +52,15 @@ public class HempBlock extends Block {
                 world.setBlockState(pos.up(), this.getDefaultState(), Block.NOTIFY_LISTENERS);
             }
         }
+    }
+
+    @Override
+    protected BlockState getStateForNeighborUpdate(BlockState state, net.minecraft.util.math.Direction direction,
+                                                   BlockState neighborState, net.minecraft.world.WorldAccess world,
+                                                   BlockPos pos, BlockPos neighborPos) {
+        if (!this.canPlaceAt(state, world, pos)) {
+            return net.minecraft.block.Blocks.AIR.getDefaultState();
+        }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 }

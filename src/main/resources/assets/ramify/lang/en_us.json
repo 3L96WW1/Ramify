@@ -28,5 +28,7 @@
   "advancement.ramify.corn_blight.desc": "Harvest your first corn and remember the blighted field",
   "advancement.ramify.non_terra_plus_ultra.desc": "Inject adrenaline and leave the limit behind",
   "tag.item.ramify.paper": "Paper",
-  "tag.item.c.paper": "Paper"
+  "tag.item.c.paper": "Paper",
+  "advancement.ramify.root.title": "Ramify",
+  "advancement.ramify.root.desc": "Fibers, bandages and herbs"
 }

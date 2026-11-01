@@ -52,4 +52,14 @@ public class CornBlock extends Block {
             }
         }
     }
+
+    @Override
+    protected BlockState getStateForNeighborUpdate(BlockState state, net.minecraft.util.math.Direction direction,
+                                                   BlockState neighborState, net.minecraft.world.WorldAccess world,
+                                                   BlockPos pos, BlockPos neighborPos) {
+        if (!this.canPlaceAt(state, world, pos)) {
+            return net.minecraft.block.Blocks.AIR.getDefaultState();
+        }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
 }

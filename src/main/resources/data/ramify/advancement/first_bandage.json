@@ -28,5 +28,6 @@
     [
       "use_bandage"
     ]
-  ]
+  ],
+  "parent": "ramify:root"
 }
