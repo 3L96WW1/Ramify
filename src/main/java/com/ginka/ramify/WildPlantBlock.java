@@ -30,7 +30,8 @@ public class WildPlantBlock extends Block {
                 || floor.isOf(net.minecraft.block.Blocks.PODZOL)
                 || floor.isOf(net.minecraft.block.Blocks.MYCELIUM)
                 || floor.isOf(net.minecraft.block.Blocks.MOSS_BLOCK)
-                || floor.isOf(net.minecraft.block.Blocks.SNOW_BLOCK);
+                || floor.isOf(net.minecraft.block.Blocks.SNOW_BLOCK)
+                || floor.isOf(net.minecraft.block.Blocks.SNOW);
     }
 
     @Override

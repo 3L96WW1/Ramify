@@ -1,28 +1,52 @@
 {
   "variants": {
-    "age=0": {
+    "half=bottom,age=0": {
       "model": "ramify:block/corn_stage0"
     },
-    "age=1": {
+    "half=top,age=0": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=1": {
       "model": "ramify:block/corn_stage0"
     },
-    "age=2": {
+    "half=top,age=1": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=2": {
       "model": "ramify:block/corn_stage1"
     },
-    "age=3": {
+    "half=top,age=2": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=3": {
       "model": "ramify:block/corn_stage1"
     },
-    "age=4": {
+    "half=top,age=3": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=4": {
       "model": "ramify:block/corn_stage2"
     },
-    "age=5": {
+    "half=top,age=4": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=5": {
       "model": "ramify:block/corn_stage2"
     },
-    "age=6": {
+    "half=top,age=5": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=6": {
       "model": "ramify:block/corn_stage3"
     },
-    "age=7": {
-      "model": "ramify:block/corn_stage3"
+    "half=top,age=6": {
+      "model": "ramify:block/corn_top_7"
+    },
+    "half=bottom,age=7": {
+      "model": "ramify:block/corn_bottom_7"
+    },
+    "half=top,age=7": {
+      "model": "ramify:block/corn_top_7"
     }
   }
 }

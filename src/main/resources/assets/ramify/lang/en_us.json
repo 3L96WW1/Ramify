@@ -11,7 +11,7 @@
   "item.ramify.roasted_corn": "Roasted Corn",
   "item.ramify.mushroom_soup": "Delicious Mushroom Soup",
   "item.ramify.corn_seeds": "Corn Seeds",
-  "block.ramify.hemp": "Hemp Leaves",
+  "block.ramify.hemp": "Hemp",
   "block.ramify.jute": "Jute",
   "block.ramify.sisal": "Sisal",
   "block.ramify.strawberry_bush": "Strawberry Bush",
@@ -30,5 +30,6 @@
   "tag.item.ramify.paper": "Paper",
   "tag.item.c.paper": "Paper",
   "advancement.ramify.root.title": "Ramify",
-  "advancement.ramify.root.desc": "Fibers, bandages and herbs"
+  "advancement.ramify.root.desc": "Fibers, bandages and herbs",
+  "item.ramify.hemp_leaf": "Hemp Leaf"
 }

@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -13,6 +14,7 @@ import net.minecraft.util.Identifier;
 
 public final class ModItems {
     // 基础材料
+    public static final Item HEMP_LEAF = reg("hemp_leaf", new Item(new Item.Settings()));
     public static final Item HEMP_FIBER = reg("hemp_fiber", new Item(new Item.Settings()));
     public static final Item JUTE_FIBER = reg("jute_fiber", new Item(new Item.Settings()));
     public static final Item SISAL_FIBER = reg("sisal_fiber", new Item(new Item.Settings()));
@@ -26,7 +28,7 @@ public final class ModItems {
     // 食物
     public static final Item STRAWBERRY = reg("strawberry", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.3f).build())));
-    public static final Item CORN = reg("corn", new Item(new Item.Settings()
+    public static final Item CORN = reg("corn", new BlockItem(ModBlocks.CORN, new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.4f).build())));
     public static final Item ROASTED_CORN = reg("roasted_corn", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
@@ -51,6 +53,7 @@ public final class ModItems {
             entries.add(ADRENALINE);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+            entries.add(HEMP_LEAF);
             entries.add(HEMP_FIBER);
             entries.add(JUTE_FIBER);
             entries.add(SISAL_FIBER);

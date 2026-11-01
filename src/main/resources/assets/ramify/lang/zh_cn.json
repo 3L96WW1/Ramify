@@ -11,7 +11,7 @@
   "item.ramify.roasted_corn": "烤玉米棒",
   "item.ramify.mushroom_soup": "美味的蘑菇汤",
   "item.ramify.corn_seeds": "玉米种子",
-  "block.ramify.hemp": "麻叶",
+  "block.ramify.hemp": "麻",
   "block.ramify.jute": "黄麻",
   "block.ramify.sisal": "剑麻",
   "block.ramify.strawberry_bush": "草莓丛",
@@ -30,5 +30,6 @@
   "tag.item.ramify.paper": "纸",
   "tag.item.c.paper": "纸",
   "advancement.ramify.root.title": "麻 / Ramify",
-  "advancement.ramify.root.desc": "纤维、绷带与草药"
+  "advancement.ramify.root.desc": "纤维、绷带与草药",
+  "item.ramify.hemp_leaf": "麻叶"
 }

@@ -49,7 +49,8 @@ public final class ModWorldGen {
         // 松茸：雪原/雪林
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.SNOWY_PLAINS, BiomeKeys.SNOWY_TAIGA, BiomeKeys.SNOWY_BEACH,
-                        BiomeKeys.ICE_SPIKES, BiomeKeys.GROVE, BiomeKeys.SNOWY_SLOPES),
+                        BiomeKeys.ICE_SPIKES, BiomeKeys.GROVE, BiomeKeys.SNOWY_SLOPES,
+                        BiomeKeys.FROZEN_PEAKS, BiomeKeys.JAGGED_PEAKS, BiomeKeys.FROZEN_RIVER),
                 GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
 
         // 油菜花：森林与草原
