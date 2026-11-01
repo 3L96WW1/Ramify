@@ -1,3 +1,6 @@
 {
-  "parent": "ramify:block/jute"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ramify:item/jute"
+  }
 }

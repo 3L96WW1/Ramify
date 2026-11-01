@@ -1,3 +1,6 @@
 {
-  "parent": "ramify:block/sisal"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ramify:item/sisal"
+  }
 }

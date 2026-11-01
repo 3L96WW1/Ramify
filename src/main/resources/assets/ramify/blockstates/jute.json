@@ -1,16 +1,28 @@
 {
   "variants": {
-    "age=0": {
+    "half=bottom,age=0": {
       "model": "ramify:block/jute_stage0"
     },
-    "age=1": {
+    "half=top,age=0": {
+      "model": "ramify:block/jute_top_3"
+    },
+    "half=bottom,age=1": {
       "model": "ramify:block/jute_stage1"
     },
-    "age=2": {
+    "half=top,age=1": {
+      "model": "ramify:block/jute_top_3"
+    },
+    "half=bottom,age=2": {
       "model": "ramify:block/jute_stage2"
     },
-    "age=3": {
-      "model": "ramify:block/jute_stage3"
+    "half=top,age=2": {
+      "model": "ramify:block/jute_top_3"
+    },
+    "half=bottom,age=3": {
+      "model": "ramify:block/jute_bottom_3"
+    },
+    "half=top,age=3": {
+      "model": "ramify:block/jute_top_3"
     }
   }
 }
