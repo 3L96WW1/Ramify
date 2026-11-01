@@ -15,6 +15,8 @@ import net.minecraft.world.WorldView;
 /** 麻：像甘蔗一样长高，但不需要水，只长在草/土上喵 */
 public class HempBlock extends Block {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
+    /** 最多长 3 节，防止一节顶着一节往天上长喵 */
+    public static final int MAX_HEIGHT = 3;
     private static final VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 16, 14);
 
     public HempBlock(Settings settings) {
@@ -40,13 +42,22 @@ public class HempBlock extends Block {
                 || floor.isOf(ModBlocks.HEMP);
     }
 
+    /** 自己脚下堆了几节麻（不含自己）喵 */
+    private static int hempHeightBelow(WorldView world, BlockPos pos) {
+        int below = 0;
+        while (below < MAX_HEIGHT && world.getBlockState(pos.down(below + 1)).isOf(ModBlocks.HEMP)) {
+            below++;
+        }
+        return below;
+    }
+
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.getLightLevel(pos.up()) >= 9 && random.nextInt(6) == 0) {
             int age = state.get(AGE);
             if (age < 3) {
                 world.setBlockState(pos, state.with(AGE, age + 1), Block.NOTIFY_LISTENERS);
-            } else if (world.getBlockState(pos.up()).isAir()) {
+            } else if (hempHeightBelow(world, pos) + 1 < MAX_HEIGHT && world.getBlockState(pos.up()).isAir()) {
                 world.setBlockState(pos.up(), this.getDefaultState(), Block.NOTIFY_LISTENERS);
             }
         }

@@ -34,7 +34,13 @@ public class CornBlock extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.FARMLAND);
+        BlockState floor = world.getBlockState(pos.down());
+        // 耕地是种的，草地/泥土/灰化土是野外长的喵
+        return floor.isOf(net.minecraft.block.Blocks.FARMLAND)
+                || floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK)
+                || floor.isOf(net.minecraft.block.Blocks.DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.PODZOL);
     }
 
     @Override
