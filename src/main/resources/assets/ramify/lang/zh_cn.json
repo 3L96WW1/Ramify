@@ -1,0 +1,17 @@
+{
+  "item.ramify.hemp_fiber": "麻纤维",
+  "item.ramify.bandage": "绷带",
+  "item.ramify.anti_infection": "抗感染药",
+  "item.ramify.adrenaline": "肾上腺素",
+  "item.ramify.strawberry": "草莓",
+  "item.ramify.corn": "玉米",
+  "item.ramify.corn_seeds": "玉米种子",
+  "block.ramify.hemp": "麻",
+  "block.ramify.strawberry_bush": "草莓丛",
+  "block.ramify.corn": "玉米",
+  "block.ramify.wooden_spikes": "木刺",
+  "itemGroup.ramify": "麻",
+  "subtitles.ramify.bandage_use": "窸窸窣窣",
+  "advancement.ramify.first_bandage.title": "以麻敛血",
+  "advancement.ramify.first_bandage.desc": "第一次使用绷带止血"
+}

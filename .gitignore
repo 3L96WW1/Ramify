@@ -1,0 +1,22 @@
+# Gradle
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# 运行时
+run/
+runs/
+
+# 工具链/缓存
+.toolchain/
+.gradle-home/
+
+# 系统
+hs_err_pid*.log
+replay_pid*.log
+*.log

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "fff",
+    "fpf",
+    "fff"
+  ],
+  "key": {
+    "f": {
+      "item": "ramify:hemp_fiber"
+    },
+    "p": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "id": "ramify:bandage",
+    "count": 2
+  }
+}

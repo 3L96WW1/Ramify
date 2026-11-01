@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ramify:block/corn"
+    },
+    "age=1": {
+      "model": "ramify:block/corn"
+    },
+    "age=2": {
+      "model": "ramify:block/corn"
+    },
+    "age=3": {
+      "model": "ramify:block/corn"
+    },
+    "age=4": {
+      "model": "ramify:block/corn"
+    },
+    "age=5": {
+      "model": "ramify:block/corn"
+    },
+    "age=6": {
+      "model": "ramify:block/corn"
+    },
+    "age=7": {
+      "model": "ramify:block/corn"
+    }
+  }
+}

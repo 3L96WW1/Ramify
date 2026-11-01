@@ -1,0 +1,11 @@
+{
+  "bandage_use": {
+    "subtitle": "subtitles.ramify.bandage_use",
+    "sounds": [
+      {
+        "name": "ramify:bandage_use",
+        "stream": false
+      }
+    ]
+  }
+}
