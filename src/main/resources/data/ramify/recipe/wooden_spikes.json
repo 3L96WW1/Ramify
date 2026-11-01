@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " p ",
+    "ppp",
+    " s "
+  ],
+  "key": {
+    "p": {
+      "item": "minecraft:oak_planks"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "ramify:wooden_spikes",
+    "count": 4
+  }
+}

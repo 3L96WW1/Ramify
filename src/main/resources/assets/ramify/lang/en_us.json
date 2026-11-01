@@ -1,0 +1,17 @@
+{
+  "item.ramify.hemp_fiber": "Hemp Fiber",
+  "item.ramify.bandage": "Bandage",
+  "item.ramify.anti_infection": "Anti-Infection Drug",
+  "item.ramify.adrenaline": "Adrenaline",
+  "item.ramify.strawberry": "Strawberry",
+  "item.ramify.corn": "Corn",
+  "item.ramify.corn_seeds": "Corn Seeds",
+  "block.ramify.hemp": "Hemp",
+  "block.ramify.strawberry_bush": "Strawberry Bush",
+  "block.ramify.corn": "Corn",
+  "block.ramify.wooden_spikes": "Wooden Spikes",
+  "itemGroup.ramify": "Ramify",
+  "subtitles.ramify.bandage_use": "Rustling",
+  "advancement.ramify.first_bandage.title": "Staunching with Hemp",
+  "advancement.ramify.first_bandage.desc": "Use a bandage for the first time"
+}

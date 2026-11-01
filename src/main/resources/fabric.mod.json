@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "ramify",
+  "version": "${version}",
+  "name": "麻 / Ramify",
+  "description": "麻 / Ramify —— 绷带、草药与木刺防线（Minecraft 1.21.1 Fabric）",
+  "authors": [
+    "GINKA_3L96WW1"
+  ],
+  "license": "MPL-2.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ginka.ramify.Ramify"
+    ],
+    "client": [
+      "com.ginka.ramify.client.RamifyClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

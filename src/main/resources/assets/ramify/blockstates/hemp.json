@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ramify:block/hemp"
+    },
+    "age=1": {
+      "model": "ramify:block/hemp"
+    },
+    "age=2": {
+      "model": "ramify:block/hemp"
+    },
+    "age=3": {
+      "model": "ramify:block/hemp"
+    }
+  }
+}
