@@ -4,7 +4,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
@@ -28,7 +27,7 @@ public final class ModItems {
     // 食物
     public static final Item STRAWBERRY = reg("strawberry", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.3f).build())));
-    public static final Item CORN = reg("corn", new BlockItem(ModBlocks.CORN, new Item.Settings()
+    public static final Item CORN = reg("corn", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.4f).build())));
     public static final Item ROASTED_CORN = reg("roasted_corn", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
@@ -47,7 +46,7 @@ public final class ModItems {
                     .build())));
     public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
-    public static final Item CORN_SEEDS = reg("corn_seeds", new SeedsItem(new Item.Settings(), ModBlocks.CORN));
+    public static final Item CORN_SEEDS = reg("corn_seeds", new Item(new Item.Settings()));
 
     private static Item reg(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Ramify.MOD_ID, name), item);
@@ -76,11 +75,7 @@ public final class ModItems {
             entries.add(RAW_SKEWER);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
-            entries.add(ModBlocks.HEMP);
-            entries.add(ModBlocks.JUTE);
-            entries.add(ModBlocks.SISAL);
             entries.add(ModBlocks.STRAWBERRY_BUSH);
-            entries.add(ModBlocks.CORN);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
             entries.add(ModBlocks.RAPESEED);

@@ -1,16 +1,16 @@
 {
   "variants": {
     "age=0": {
-      "model": "ramify:block/strawberry_bush_stage0"
+      "model": "ramify:block/strawberry_bush_tall0"
     },
     "age=1": {
-      "model": "ramify:block/strawberry_bush_stage1"
+      "model": "ramify:block/strawberry_bush_tall1"
     },
     "age=2": {
-      "model": "ramify:block/strawberry_bush_stage2"
+      "model": "ramify:block/strawberry_bush_tall2"
     },
     "age=3": {
-      "model": "ramify:block/strawberry_bush_stage3"
+      "model": "ramify:block/strawberry_bush_tall3"
     }
   }
 }

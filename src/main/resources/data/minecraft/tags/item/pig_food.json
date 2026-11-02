@@ -1,5 +1,8 @@
 {
   "values": [
+    "minecraft:carrot",
+    "minecraft:potato",
+    "minecraft:beetroot",
     "ramify:corn"
   ]
 }

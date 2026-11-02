@@ -20,8 +20,8 @@ import net.minecraft.world.WorldView;
 /** 草莓丛：像甜浆果一样，右键采摘后重新长喵 */
 public class StrawberryBushBlock extends Block {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
-    private static final VoxelShape SMALL = Block.createCuboidShape(4, 0, 4, 12, 8, 12);
-    private static final VoxelShape LARGE = Block.createCuboidShape(2, 0, 2, 14, 14, 14);
+    private static final VoxelShape SMALL = Block.createCuboidShape(4, 0, 4, 12, 12, 12);
+    private static final VoxelShape LARGE = Block.createCuboidShape(2, 0, 2, 14, 24, 14);
 
     public StrawberryBushBlock(Settings settings) {
         super(settings);

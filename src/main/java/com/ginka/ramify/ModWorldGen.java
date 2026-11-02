@@ -32,6 +32,8 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "strawberry_bush_river"));
     public static final RegistryKey<PlacedFeature> STRAWBERRY_RARE =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "strawberry_bush_rare"));
+    public static final RegistryKey<PlacedFeature> RAPESEED_JUNGLE =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "rapeseed_jungle_patch"));
 
     public static void register() {
         // 麻：草原/草甸/普通森林，白桦林与热带草原不长
@@ -68,6 +70,9 @@ public final class ModWorldGen {
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, RAPESEED_PLACED);
         BiomeModifications.addFeature(plains, GenerationStep.Feature.VEGETAL_DECORATION, RAPESEED_PLACED);
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.JUNGLE, BiomeKeys.SPARSE_JUNGLE, BiomeKeys.BAMBOO_JUNGLE),
+                GenerationStep.Feature.VEGETAL_DECORATION, RAPESEED_JUNGLE);
 
         // 草莓丛：白桦林/草甸/森林/向日葵平原常见，河岸与少数林地为低权重
         BiomeModifications.addFeature(
