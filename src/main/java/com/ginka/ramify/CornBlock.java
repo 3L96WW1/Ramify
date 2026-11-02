@@ -2,6 +2,7 @@ package com.ginka.ramify;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.entity.LivingEntity;
@@ -14,12 +15,13 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 /** 玉米：两格高、上下同步；玩家版只能种耕地，野生版长草地喵 */
-public class CornBlock extends Block {
+public class CornBlock extends Block implements Fertilizable {
     public static final IntProperty AGE = IntProperty.of("age", 0, 7);
     public static final EnumProperty<BlockHalf> HALF = EnumProperty.of("half", BlockHalf.class);
     private static final VoxelShape SHAPE = Block.createCuboidShape(3, 0, 3, 13, 16, 13);
@@ -39,7 +41,16 @@ public class CornBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        return isInvisibleTop(state) ? VoxelShapes.empty() : SHAPE;
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return isInvisibleTop(state) ? VoxelShapes.empty() : SHAPE;
+    }
+
+    private static boolean isInvisibleTop(BlockState state) {
+        return state.get(HALF) == BlockHalf.TOP && state.get(AGE) < 7;
     }
 
     @Override
@@ -94,6 +105,30 @@ public class CornBlock extends Block {
             return net.minecraft.block.Blocks.AIR.getDefaultState();
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
+        return state.get(HALF) == BlockHalf.BOTTOM && state.get(AGE) < 7;
+    }
+
+    @Override
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        return true;
+    }
+
+    @Override
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+        if (state.get(HALF) != BlockHalf.BOTTOM || state.get(AGE) >= 7) {
+            return;
+        }
+        int age = state.get(AGE) + 1;
+        BlockState grown = state.with(AGE, age);
+        world.setBlockState(pos, grown, Block.NOTIFY_LISTENERS);
+        BlockState above = world.getBlockState(pos.up());
+        if (above.isOf(this) && above.get(HALF) == BlockHalf.TOP) {
+            world.setBlockState(pos.up(), above.with(AGE, age), Block.NOTIFY_LISTENERS);
+        }
     }
 
     @Override
