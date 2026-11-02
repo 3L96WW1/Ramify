@@ -16,8 +16,8 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
     public GrillScreen(GrillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         this.backgroundWidth = 256;
-        this.backgroundHeight = 234;
-        this.playerInventoryTitleY = 138;
+        this.backgroundHeight = 260;
+        this.playerInventoryTitleY = 160;
     }
 
     @Override
@@ -26,48 +26,57 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         int y = this.y;
         context.fill(x, y, x + this.backgroundWidth, y + this.backgroundHeight, BG);
         context.fill(x + 1, y + 1, x + this.backgroundWidth - 1, y + 18, 0xFF2A2A2A);
-        // 十字原料槽背景
-        drawSlot(context, x + 88, y + 20); drawSlot(context, x + 70, y + 38);
-        drawSlot(context, x + 106, y + 38); drawSlot(context, x + 88, y + 56);
-        // 燃料槽
-        drawSlot(context, x + 70, y + 88); drawSlot(context, x + 106, y + 88);
-        // 8 个成品槽
+
+        // 十字原料槽：横向、纵向间距加大，槽框略扁
+        drawSlot(context, x + 80, y + 18);
+        drawSlot(context, x + 58, y + 40);
+        drawSlot(context, x + 102, y + 40);
+        drawSlot(context, x + 80, y + 62);
+
+        // 燃料槽下移
+        drawSlot(context, x + 58, y + 96);
+        drawSlot(context, x + 102, y + 96);
+
+        // 右侧 8 行成品
         for (int i = 0; i < 8; i++) {
-            int sy = y + 20 + i * 16;
+            int sy = y + 18 + i * 16;
             context.fill(x + 149, sy - 1, x + 249, sy + 15, 0xFF303030);
             context.drawBorder(x + 149, sy - 1, 100, 16, BORDER);
         }
-        // 进度条 / 燃料条
-        int p = handler.getProgress() * 56 / handler.getMaxProgress();
-        context.fill(x + 64, y + 116, x + 120, y + 122, 0xFF444444);
-        context.fill(x + 64, y + 116, x + 64 + p, y + 122, ORANGE);
+
+        // 燃料条 / 进度条下移
         int b = handler.getBurnTime() * 56 / handler.getFuelTotal();
-        context.fill(x + 64, y + 108, x + 120, y + 112, 0xFF444444);
-        context.fill(x + 64, y + 108, x + 64 + b, y + 112, 0xFFFFB020);
+        context.fill(x + 64, y + 114, x + 120, y + 118, 0xFF444444);
+        context.fill(x + 64, y + 114, x + 64 + b, y + 118, 0xFFFFB020);
+        int p = handler.getProgress() * 56 / handler.getMaxProgress();
+        context.fill(x + 64, y + 124, x + 120, y + 130, 0xFF444444);
+        context.fill(x + 64, y + 124, x + 64 + p, y + 130, ORANGE);
+
         // 玩家背包
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
-                drawSlot(context, x + 8 + col * 18, y + 150 + row * 18);
+                drawSlot(context, x + 8 + col * 18, y + 172 + row * 18);
             }
         }
         for (int col = 0; col < 9; col++) {
-            drawSlot(context, x + 8 + col * 18, y + 208);
+            drawSlot(context, x + 8 + col * 18, y + 230);
         }
     }
 
     private void drawSlot(DrawContext context, int x, int y) {
-        context.fill(x - 1, y - 1, x + 17, y + 17, SLOT);
-        context.drawBorder(x - 1, y - 1, 18, 18, BORDER);
+        // 18×16，比原版槽位略扁
+        context.fill(x - 1, y - 1, x + 17, y + 15, SLOT);
+        context.drawBorder(x - 1, y - 1, 18, 16, BORDER);
     }
 
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         context.drawText(this.textRenderer, this.title, 8, 6, 0xFFFFFF, false);
-        context.drawText(this.textRenderer, "原料", 62, 8, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "燃料", 58, 76, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "成品列表", 150, 8, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "进度", 30, 116, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, this.playerInventoryTitle, 8, 138, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "原料", 80, 4, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "燃料", 26, 92, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "成品列表", 150, 4, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "进度", 30, 124, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, this.playerInventoryTitle, 8, 160, 0xAAAAAA, false);
     }
 
     public static void register() {

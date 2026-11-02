@@ -36,6 +36,16 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
     public static void tick(World world, BlockPos pos, BlockState state, GrillBlockEntity be) {
         if (world.isClient) return;
         boolean changed = false;
+        boolean cooking = be.hasIngredients();
+        if (!cooking) {
+            // 没有原料时不消耗燃料，进度归零
+            if (be.progress != 0) {
+                be.progress = 0;
+                changed = true;
+            }
+            if (changed) be.markDirty();
+            return;
+        }
         if (be.burnTime > 0) {
             be.burnTime--;
             changed = true;
@@ -49,15 +59,12 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
                 changed = true;
             }
         }
-        if (be.burnTime > 0 && be.hasIngredients()) {
+        if (be.burnTime > 0) {
             be.progress++;
             if (be.progress >= be.maxProgress) {
                 be.progress = 0;
                 // 配方系统后续接入
             }
-            changed = true;
-        } else if (be.progress != 0) {
-            be.progress = 0;
             changed = true;
         }
         if (changed) be.markDirty();
