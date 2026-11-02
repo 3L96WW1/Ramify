@@ -1,6 +1,9 @@
 package com.ginka.ramify;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.util.Hand;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.EscapeDangerGoal;
 import net.minecraft.entity.ai.goal.LookAroundGoal;
@@ -27,7 +30,7 @@ public class CrabEntity extends PathAwareEntity {
 
     public static DefaultAttributeContainer.Builder createAttributes() {
         return PathAwareEntity.createMobAttributes()
-                .add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 3.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.25);
     }
 
@@ -44,6 +47,15 @@ public class CrabEntity extends PathAwareEntity {
                                    BlockPos pos, Random random) {
         return world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.SAND)
                 || world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.GRAVEL);
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (!this.getWorld().isClient && source.getAttacker() instanceof LivingEntity attacker
+                && attacker.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
+            attacker.damage(this.getWorld().getDamageSources().thorns(this), 1.0f);
+        }
+        return super.damage(source, amount);
     }
 
     @Override
