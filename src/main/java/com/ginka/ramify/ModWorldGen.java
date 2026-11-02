@@ -93,7 +93,9 @@ public final class ModWorldGen {
 
         // 蔷薇丛：花林/草原/草甸/森林少量生成
         BiomeModifications.addFeature(
-                BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.PLAINS, BiomeKeys.MEADOW, BiomeKeys.FOREST),
+                BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS,
+                        BiomeKeys.MEADOW, BiomeKeys.FOREST, BiomeKeys.BIRCH_FOREST,
+                        BiomeKeys.OLD_GROWTH_BIRCH_FOREST, BiomeKeys.DARK_FOREST, BiomeKeys.CHERRY_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ROSE_BUSH_PLACED);
 
         // 油菜花：森林与草原
