@@ -55,16 +55,16 @@ public class GrillScreenHandler extends ScreenHandler {
         this.addProperties(properties);
 
         // 十字形原料：上、左、右、下
-        this.addSlot(new Slot(inventory, 0, 80, 38));
-        this.addSlot(new Slot(inventory, 1, 58, 60));
-        this.addSlot(new Slot(inventory, 2, 102, 60));
-        this.addSlot(new Slot(inventory, 3, 80, 82));
+        this.addSlot(new Slot(inventory, 0, 80, 36));
+        this.addSlot(new Slot(inventory, 1, 56, 60));
+        this.addSlot(new Slot(inventory, 2, 104, 60));
+        this.addSlot(new Slot(inventory, 3, 80, 84));
 
         // 两个燃料槽
-        this.addSlot(new Slot(inventory, 4, 58, 112) {
+        this.addSlot(new Slot(inventory, 4, 56, 120) {
             @Override public boolean canInsert(ItemStack stack) { return isGrillFuel(stack); }
         });
-        this.addSlot(new Slot(inventory, 5, 102, 112) {
+        this.addSlot(new Slot(inventory, 5, 104, 120) {
             @Override public boolean canInsert(ItemStack stack) { return isGrillFuel(stack); }
         });
 
@@ -78,11 +78,11 @@ public class GrillScreenHandler extends ScreenHandler {
         // 玩家背包
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
-                this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * 18, 186 + row * 18));
+                this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * 18, 190 + row * 18));
             }
         }
         for (int col = 0; col < 9; col++) {
-            this.addSlot(new Slot(playerInventory, col, 8 + col * 18, 244));
+            this.addSlot(new Slot(playerInventory, col, 8 + col * 18, 248));
         }
     }
 
