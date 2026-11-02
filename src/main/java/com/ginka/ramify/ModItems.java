@@ -81,7 +81,6 @@ public final class ModItems {
             entries.add(HEMP_FIBER);
             entries.add(RAPESEED);
             entries.add(HEMP_PAPER);
-            entries.add(MURMUR_BOT);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.add(STRAWBERRY);
