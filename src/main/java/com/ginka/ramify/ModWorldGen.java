@@ -36,6 +36,10 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "rapeseed_jungle_patch"));
     public static final RegistryKey<PlacedFeature> COLD_HEMP_PLACED =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "cold_hemp_patch"));
+    public static final RegistryKey<PlacedFeature> ALPINE_FLAX_PLACED =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_patch"));
+    public static final RegistryKey<PlacedFeature> ALPINE_FLAX_CHERRY =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_cherry"));
 
     public static void register() {
         // 麻：草原/草甸/普通森林，白桦林与热带草原不长
@@ -69,6 +73,15 @@ public final class ModWorldGen {
                 BiomeKeys.FROZEN_PEAKS, BiomeKeys.JAGGED_PEAKS, BiomeKeys.FROZEN_RIVER);
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, COLD_HEMP_PLACED);
+
+        // 高山亚麻：草甸/丘陵/山地/石峰，樱花林低权重
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
+                        BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.WINDSWEPT_FOREST,
+                        BiomeKeys.STONY_PEAKS),
+                GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CHERRY_GROVE),
+                GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_CHERRY);
 
         // 油菜花：森林与草原
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),

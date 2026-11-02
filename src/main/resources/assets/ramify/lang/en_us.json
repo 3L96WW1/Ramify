@@ -51,5 +51,6 @@
   "item.ramify.raw_lobster": "Raw Lobster",
   "item.ramify.cooked_lobster": "Cooked Lobster",
   "item.ramify.lobster_spawn_egg": "Lobster Spawn Egg",
-  "entity.ramify.lobster": "Lobster"
+  "entity.ramify.lobster": "Lobster",
+  "block.ramify.alpine_flax": "Alpine Flax"
 }
