@@ -36,5 +36,7 @@
   "item.ramify.sisal_leaf": "剑麻叶",
   "item.ramify.rapeseed_soup": "油菜汤",
   "item.ramify.raw_skewer": "生烤串",
-  "block.ramify.cold_hemp": "寒麻"
+  "block.ramify.cold_hemp": "寒麻",
+  "item.ramify.rapeseed": "油菜",
+  "effect.ramify.warmth": "温暖"
 }

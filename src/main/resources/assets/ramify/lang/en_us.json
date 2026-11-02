@@ -18,7 +18,7 @@
   "block.ramify.corn": "Corn",
   "block.ramify.straw_mushroom": "Straw Mushroom",
   "block.ramify.matsutake": "Matsutake",
-  "block.ramify.rapeseed": "Rapeseed",
+  "block.ramify.rapeseed": "Rapeseed Flower",
   "block.ramify.wooden_spikes": "Wooden Spikes",
   "effect.ramify.anti_infection": "Anti-Infection",
   "itemGroup.ramify": "Ramify",
@@ -36,5 +36,7 @@
   "item.ramify.sisal_leaf": "Sisal Leaf",
   "item.ramify.rapeseed_soup": "Rapeseed Soup",
   "item.ramify.raw_skewer": "Raw Skewer",
-  "block.ramify.cold_hemp": "Cold Hemp"
+  "block.ramify.cold_hemp": "Cold Hemp",
+  "item.ramify.rapeseed": "Rapeseed",
+  "effect.ramify.warmth": "Warmth"
 }

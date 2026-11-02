@@ -18,6 +18,7 @@ public final class ModItems {
     public static final Item SISAL_LEAF = reg("sisal_leaf", new Item(new Item.Settings()));
     public static final Item HEMP_FIBER = reg("hemp_fiber", new Item(new Item.Settings()));
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
+    public static final Item RAPESEED = reg("rapeseed", new Item(new Item.Settings()));
 
     // 药品
     public static final Item BANDAGE = reg("bandage", new BandageItem(new Item.Settings().maxCount(16)));
@@ -38,15 +39,18 @@ public final class ModItems {
                     .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 120, 0), 1.0f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 240, 0), 1.0f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 240, 0), 1.0f)
+                    .usingConvertsTo(Items.BOWL)
                     .build())));
     public static final Item RAPESEED_SOUP = reg("rapeseed_soup", new Item(new Item.Settings().maxCount(1)
             .recipeRemainder(Items.BOWL)
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
-                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 180, 0), 1.0f)
+                    .statusEffect(new StatusEffectInstance(ModEffects.warmth(), 180, 0), 1.0f)
+                    .usingConvertsTo(Items.BOWL)
                     .build())));
     public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
-    public static final Item CORN_SEEDS = reg("corn_seeds", new Item(new Item.Settings()));
+    public static final Item CORN_SEEDS = reg("corn_seeds", new SeedsItem(new Item.Settings(), ModBlocks.CORN));
 
     private static Item reg(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Ramify.MOD_ID, name), item);
@@ -63,6 +67,7 @@ public final class ModItems {
             entries.add(JUTE_LEAF);
             entries.add(SISAL_LEAF);
             entries.add(HEMP_FIBER);
+            entries.add(RAPESEED);
             entries.add(HEMP_PAPER);
             entries.add(CORN_SEEDS);
         });
@@ -78,7 +83,6 @@ public final class ModItems {
             entries.add(ModBlocks.STRAWBERRY_BUSH);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
-            entries.add(ModBlocks.RAPESEED);
         });
     }
 

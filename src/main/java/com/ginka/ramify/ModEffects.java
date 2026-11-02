@@ -9,13 +9,19 @@ import net.minecraft.util.Identifier;
 /** 自定义状态效果喵 */
 public final class ModEffects {
     public static final StatusEffect ANTI_INFECTION = new AntiInfectionEffect();
+    public static final StatusEffect WARMTH = new WarmthEffect();
 
     public static RegistryEntry<StatusEffect> antiInfection() {
         return Registries.STATUS_EFFECT.getEntry(ANTI_INFECTION);
     }
 
+    public static RegistryEntry<StatusEffect> warmth() {
+        return Registries.STATUS_EFFECT.getEntry(WARMTH);
+    }
+
     public static void register() {
         Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "anti_infection"), ANTI_INFECTION);
+        Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "warmth"), WARMTH);
     }
 
     private ModEffects() {

@@ -44,6 +44,8 @@ public final class ModWorldGen {
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST,
                 BiomeKeys.TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, HEMP_PLACED);
         BiomeModifications.addFeature(plains, GenerationStep.Feature.VEGETAL_DECORATION, CORN_PLACED);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, CORN_PLACED);
 
         // 黄麻：白桦林，沼泽同等概率
         BiomeModifications.addFeature(

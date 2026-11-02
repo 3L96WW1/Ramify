@@ -51,7 +51,7 @@ public final class ModBlocks {
         regBlockOnly("wild_corn", WILD_CORN);
         reg("straw_mushroom", STRAW_MUSHROOM);
         reg("matsutake", MATSUTAKE);
-        reg("rapeseed", RAPESEED);
+        regBlockOnly("rapeseed", RAPESEED);
         reg("wooden_spikes", WOODEN_SPIKES);
     }
 
