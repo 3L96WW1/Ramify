@@ -20,6 +20,11 @@ public final class ModItems {
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
     public static final Item RAPESEED = reg("rapeseed", new Item(new Item.Settings()));
 
+    public static final Item MYSTERY_STEW = food("mystery_stew", 4, 0.4f,
+            new StatusEffectInstance(StatusEffects.POISON, 120, 0),
+            new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0),
+            new StatusEffectInstance(StatusEffects.HUNGER, 200, 0),
+            new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0));
     public static final Item GRILLED_MEAT = food("grilled_meat", 8, 0.8f);
     public static final Item BERRY_JAM = food("berry_jam", 4, 0.3f);
     public static final Item STEAMED_VEGETABLES = food("steamed_vegetables", 6, 0.6f,
@@ -194,6 +199,7 @@ public final class ModItems {
             entries.add(GRILLED_MUSHROOM);
             entries.add(GRILLED_APPLE);
             entries.add(GRILLED_MEAT);
+            entries.add(MYSTERY_STEW);
             entries.add(BERRY_JAM);
             entries.add(STEAMED_VEGETABLES);
             entries.add(VEGETABLE_SALAD);

@@ -38,6 +38,9 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
         if (world.isClient) return;
         boolean changed = false;
         GrillRecipes.Recipe recipe = GrillRecipes.find(be);
+        if (recipe == null && be.hasIngredients()) {
+            recipe = GrillRecipes.mystery();
+        }
         if (recipe == null || !be.hasOutputSpace(recipe.output())) {
             // 没有匹配配方或成品格满：不消耗燃料，进度归零
             if (be.progress != 0) {

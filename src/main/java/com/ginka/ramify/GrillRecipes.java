@@ -37,6 +37,7 @@ public final class GrillRecipes {
     private static final Predicate<ItemStack> FISH = any(Items.COD, Items.SALMON);
     private static final Predicate<ItemStack> RAW_LOBSTER = any(ModItems.RAW_LOBSTER);
     private static final Predicate<ItemStack> HONEY = any(Items.HONEY_BOTTLE);
+    private static final Predicate<ItemStack> ANY = stack -> !stack.isEmpty();
 
     private static final List<Recipe> RECIPES = List.of(
             // 18 草莓果酱必须排在 3 普通果酱之前
@@ -73,6 +74,10 @@ public final class GrillRecipes {
             r(ModItems.MILK_CANDY, 1, List.of(Items.BUCKET, Items.BUCKET),
                     HONEY, HONEY, any(Items.MILK_BUCKET), any(Items.MILK_BUCKET))
     );
+
+    public static Recipe mystery() {
+        return r(ModItems.MYSTERY_STEW, ANY, ANY, ANY, ANY);
+    }
 
     public static Recipe find(Inventory inventory) {
         for (Recipe recipe : RECIPES) {
