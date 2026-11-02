@@ -5,14 +5,18 @@
       "id": "ramify:rose"
     },
     "title": {
-      "text": "\u6211\u5728\u5462\uff0c\u6211\u4e00\u76f4\u90fd\u5728"
+      "text": "我在呢，我一直都在"
     },
     "description": {
-      "text": "\u7b2c\u4e00\u773c\u5b69\u5b50\u53eb\u4ec0\u4e48\u90fd\u60f3\u597d\u4e86\n",
+      "text": "第一眼孩子叫什么都想好了\n",
       "color": "white",
       "extra": [
         {
-          "text": "\u514b\u62c9\u62c9\uff1a\u4f60\u7684\u8868\u767d\u70c2\u900f\u4e86",
+          "text": "这不给那谁嘛（“\n",
+          "color": "light_purple"
+        },
+        {
+          "text": "克拉拉：你的表白烂透了",
           "color": "dark_gray"
         }
       ]
