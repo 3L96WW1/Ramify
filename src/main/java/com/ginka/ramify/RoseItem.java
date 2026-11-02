@@ -1,7 +1,9 @@
 package com.ginka.ramify;
 
+import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.util.ActionResult;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,17 +20,26 @@ public class RoseItem extends Item {
         super(settings);
     }
 
-    @Override
-    public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
+    public static void register() {
+        UseEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+            if (!(entity instanceof LivingEntity living) || entity == player) return ActionResult.PASS;
+            if (!(entity instanceof PlayerEntity || entity instanceof VillagerEntity)) return ActionResult.PASS;
+            ItemStack stack = player.getStackInHand(hand);
+            if (!stack.isOf(ModItems.ROSE)) return ActionResult.PASS;
+            return gift(player, living, stack);
+        });
+    }
+
+    public static ActionResult gift(PlayerEntity user, LivingEntity entity, ItemStack stack) {
         if (entity == user || !(entity instanceof PlayerEntity || entity instanceof VillagerEntity)) {
             return ActionResult.PASS;
         }
         if (!user.getWorld().isClient) {
             if (entity instanceof PlayerEntity target) {
                 ItemStack gift = new ItemStack(ModItems.ROSE);
-                if (!target.getInventory().insertStack(gift)) {
-                    target.dropItem(gift, false);
-                }
+                if (!target.getInventory().insertStack(gift)) target.dropItem(gift, false);
+            } else {
+                entity.dropStack(new ItemStack(ModItems.ROSE));
             }
             ServerWorld world = (ServerWorld) user.getWorld();
             world.spawnParticles(ParticleTypes.HEART, entity.getX(), entity.getBodyY(0.8), entity.getZ(),
