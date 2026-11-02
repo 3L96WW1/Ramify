@@ -11,7 +11,10 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "ramify:hemp"
+              "Name": "ramify:hemp",
+              "Properties": {
+                "age": "3"
+              }
             }
           }
         }

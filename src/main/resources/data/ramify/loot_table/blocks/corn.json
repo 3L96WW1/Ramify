@@ -12,7 +12,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:corn",
           "properties": {
-            "half": "bottom"
+            "half": "lower"
           }
         }
       ],
@@ -34,7 +34,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:corn",
           "properties": {
-            "half": "bottom"
+            "half": "lower"
           }
         }
       ],

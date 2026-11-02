@@ -11,7 +11,10 @@
           "to_place": {
             "type": "minecraft:simple_state_provider",
             "state": {
-              "Name": "ramify:wild_corn"
+              "Name": "ramify:wild_corn",
+              "Properties": {
+                "age": "7"
+              }
             }
           }
         }

@@ -15,7 +15,7 @@ public final class ModBlocks {
     public static final Block JUTE = new HempBlock(AbstractBlock.Settings.create()
             .strength(0.4f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block SISAL = new WildPlantBlock(AbstractBlock.Settings.create()
-            .strength(0.2f).nonOpaque().noCollision());
+            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
     public static final Block STRAWBERRY_BUSH = new StrawberryBushBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block CORN = new CornBlock(AbstractBlock.Settings.create()

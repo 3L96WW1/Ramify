@@ -12,7 +12,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:hemp",
           "properties": {
-            "half": "bottom"
+            "half": "lower"
           }
         }
       ],
@@ -43,7 +43,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:hemp",
           "properties": {
-            "half": "bottom"
+            "half": "lower"
           }
         },
         {
