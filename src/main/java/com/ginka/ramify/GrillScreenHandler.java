@@ -55,22 +55,22 @@ public class GrillScreenHandler extends ScreenHandler {
         this.addProperties(properties);
 
         // 十字形原料：上、左、右、下
-        this.addSlot(new Slot(inventory, 0, 88, 16));
-        this.addSlot(new Slot(inventory, 1, 70, 34));
-        this.addSlot(new Slot(inventory, 2, 106, 34));
-        this.addSlot(new Slot(inventory, 3, 88, 52));
+        this.addSlot(new Slot(inventory, 0, 88, 20));
+        this.addSlot(new Slot(inventory, 1, 70, 38));
+        this.addSlot(new Slot(inventory, 2, 106, 38));
+        this.addSlot(new Slot(inventory, 3, 88, 56));
 
         // 两个燃料槽
-        this.addSlot(new Slot(inventory, 4, 70, 78) {
+        this.addSlot(new Slot(inventory, 4, 70, 88) {
             @Override public boolean canInsert(ItemStack stack) { return isGrillFuel(stack); }
         });
-        this.addSlot(new Slot(inventory, 5, 106, 78) {
+        this.addSlot(new Slot(inventory, 5, 106, 88) {
             @Override public boolean canInsert(ItemStack stack) { return isGrillFuel(stack); }
         });
 
         // 8 个成品槽，不能放入
         for (int i = 0; i < 8; i++) {
-            this.addSlot(new Slot(inventory, 6 + i, 150, 16 + i * 16) {
+            this.addSlot(new Slot(inventory, 6 + i, 150, 20 + i * 16) {
                 @Override public boolean canInsert(ItemStack stack) { return false; }
             });
         }

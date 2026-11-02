@@ -16,8 +16,8 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
     public GrillScreen(GrillScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         this.backgroundWidth = 256;
-        this.backgroundHeight = 230;
-        this.playerInventoryTitleY = 137;
+        this.backgroundHeight = 234;
+        this.playerInventoryTitleY = 138;
     }
 
     @Override
@@ -27,23 +27,23 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         context.fill(x, y, x + this.backgroundWidth, y + this.backgroundHeight, BG);
         context.fill(x + 1, y + 1, x + this.backgroundWidth - 1, y + 18, 0xFF2A2A2A);
         // 十字原料槽背景
-        drawSlot(context, x + 88, y + 16); drawSlot(context, x + 70, y + 34);
-        drawSlot(context, x + 106, y + 34); drawSlot(context, x + 88, y + 52);
+        drawSlot(context, x + 88, y + 20); drawSlot(context, x + 70, y + 38);
+        drawSlot(context, x + 106, y + 38); drawSlot(context, x + 88, y + 56);
         // 燃料槽
-        drawSlot(context, x + 70, y + 78); drawSlot(context, x + 106, y + 78);
+        drawSlot(context, x + 70, y + 88); drawSlot(context, x + 106, y + 88);
         // 8 个成品槽
         for (int i = 0; i < 8; i++) {
-            int sy = y + 16 + i * 16;
+            int sy = y + 20 + i * 16;
             context.fill(x + 149, sy - 1, x + 249, sy + 15, 0xFF303030);
             context.drawBorder(x + 149, sy - 1, 100, 16, BORDER);
         }
         // 进度条 / 燃料条
         int p = handler.getProgress() * 56 / handler.getMaxProgress();
-        context.fill(x + 64, y + 98, x + 120, y + 104, 0xFF444444);
-        context.fill(x + 64, y + 98, x + 64 + p, y + 104, ORANGE);
+        context.fill(x + 64, y + 116, x + 120, y + 122, 0xFF444444);
+        context.fill(x + 64, y + 116, x + 64 + p, y + 122, ORANGE);
         int b = handler.getBurnTime() * 56 / handler.getFuelTotal();
-        context.fill(x + 64, y + 88, x + 120, y + 92, 0xFF444444);
-        context.fill(x + 64, y + 88, x + 64 + b, y + 92, 0xFFFFB020);
+        context.fill(x + 64, y + 108, x + 120, y + 112, 0xFF444444);
+        context.fill(x + 64, y + 108, x + 64 + b, y + 112, 0xFFFFB020);
         // 玩家背包
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -63,11 +63,11 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         context.drawText(this.textRenderer, this.title, 8, 6, 0xFFFFFF, false);
-        context.drawText(this.textRenderer, "原料", 58, 58, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "燃料", 58, 84, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "成品列表", 150, 4, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "进度", 30, 98, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, this.playerInventoryTitle, 8, 137, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "原料", 62, 8, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "燃料", 58, 76, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "成品列表", 150, 8, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "进度", 30, 116, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, this.playerInventoryTitle, 8, 138, 0xAAAAAA, false);
     }
 
     public static void register() {
