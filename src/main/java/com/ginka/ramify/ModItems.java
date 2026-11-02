@@ -80,7 +80,6 @@ public final class ModItems {
             entries.add(HEMP_FIBER);
             entries.add(RAPESEED);
             entries.add(HEMP_PAPER);
-            entries.add(CORN_SEEDS);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.add(STRAWBERRY);
@@ -94,6 +93,7 @@ public final class ModItems {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(CRAB_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.add(CORN_SEEDS);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
         });
