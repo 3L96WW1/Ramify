@@ -4,8 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.BlockHalf;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
@@ -17,7 +16,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
-/** 麻：成熟后像高草丛一样占两格，最多两格喵 */
+/** 麻：像玫瑰丛一样始终两格高，上下同步破坏喵 */
 public class HempBlock extends Block {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
     public static final EnumProperty<BlockHalf> HALF = EnumProperty.of("half", BlockHalf.class);
@@ -53,11 +52,32 @@ public class HempBlock extends Block {
     }
 
     @Override
-    public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
-        if (!world.isClient && state.get(HALF) == BlockHalf.BOTTOM && state.get(AGE) == 3
+    public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+        super.onBlockAdded(state, world, pos, oldState, notify);
+        if (!world.isClient && state.get(HALF) == BlockHalf.BOTTOM
                 && world.getBlockState(pos.up()).isAir()) {
-            world.setBlockState(pos.up(), state.with(HALF, BlockHalf.TOP), Block.NOTIFY_ALL);
+            BlockState top = state.with(HALF, BlockHalf.TOP);
+            if (top.canPlaceAt(world, pos.up())) {
+                world.setBlockState(pos.up(), top, Block.NOTIFY_ALL);
+            }
         }
+    }
+
+    @Override
+    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        if (!world.isClient) {
+            boolean isTop = state.get(HALF) == BlockHalf.TOP;
+            BlockPos otherPos = isTop ? pos.down() : pos.up();
+            BlockState other = world.getBlockState(otherPos);
+            if (other.isOf(this) && other.get(HALF) != state.get(HALF)) {
+                if (isTop) {
+                    world.breakBlock(otherPos, player == null || !player.isCreative(), player);
+                } else {
+                    world.setBlockState(otherPos, net.minecraft.block.Blocks.AIR.getDefaultState(), Block.NOTIFY_ALL);
+                }
+            }
+        }
+        return super.onBreak(world, pos, state, player);
     }
 
     @Override
@@ -79,14 +99,14 @@ public class HempBlock extends Block {
             return;
         }
         int age = state.get(AGE);
+        BlockState above = world.getBlockState(pos.up());
         if (age < 3) {
             BlockState grown = state.with(AGE, age + 1);
             world.setBlockState(pos, grown, Block.NOTIFY_LISTENERS);
-            if (age + 1 == 3 && world.getBlockState(pos.up()).isAir()) {
-                world.setBlockState(pos.up(), grown.with(HALF, BlockHalf.TOP), Block.NOTIFY_LISTENERS);
+            if (above.isOf(this) && above.get(HALF) == BlockHalf.TOP) {
+                world.setBlockState(pos.up(), above.with(AGE, age + 1), Block.NOTIFY_LISTENERS);
             }
-        } else if (world.getBlockState(pos.up()).isAir()) {
-            // 顶端被破坏后补回来
+        } else if (above.isAir()) {
             world.setBlockState(pos.up(), state.with(HALF, BlockHalf.TOP), Block.NOTIFY_LISTENERS);
         }
     }

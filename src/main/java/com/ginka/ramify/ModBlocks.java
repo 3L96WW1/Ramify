@@ -11,15 +11,17 @@ import net.minecraft.util.Identifier;
 
 public final class ModBlocks {
     public static final Block HEMP = new HempBlock(AbstractBlock.Settings.create()
-            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
+            .strength(0.4f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block JUTE = new HempBlock(AbstractBlock.Settings.create()
-            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
+            .strength(0.4f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block SISAL = new WildPlantBlock(AbstractBlock.Settings.create()
             .strength(0.2f).nonOpaque().noCollision());
     public static final Block STRAWBERRY_BUSH = new StrawberryBushBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block CORN = new CornBlock(AbstractBlock.Settings.create()
-            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
+            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision(), false);
+    public static final Block WILD_CORN = new CornBlock(AbstractBlock.Settings.create()
+            .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision(), true);
     public static final Block STRAW_MUSHROOM = new WildPlantBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
     public static final Block MATSUTAKE = new WildPlantBlock(AbstractBlock.Settings.create()
@@ -43,6 +45,7 @@ public final class ModBlocks {
         reg("sisal", SISAL);
         reg("strawberry_bush", STRAWBERRY_BUSH);
         regBlockOnly("corn", CORN);
+        regBlockOnly("wild_corn", WILD_CORN);
         reg("straw_mushroom", STRAW_MUSHROOM);
         reg("matsutake", MATSUTAKE);
         reg("rapeseed", RAPESEED);
