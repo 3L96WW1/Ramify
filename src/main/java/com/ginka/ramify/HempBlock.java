@@ -43,10 +43,6 @@ public class HempBlock extends Block implements Fertilizable {
         return isInvisibleTop(state) ? VoxelShapes.empty() : SHAPE;
     }
 
-    @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return isInvisibleTop(state) ? VoxelShapes.empty() : SHAPE;
-    }
 
     private static boolean isInvisibleTop(BlockState state) {
         return state.get(HALF) == BlockHalf.TOP && state.get(AGE) < 3;

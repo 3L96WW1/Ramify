@@ -34,6 +34,8 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "strawberry_bush_rare"));
     public static final RegistryKey<PlacedFeature> RAPESEED_JUNGLE =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "rapeseed_jungle_patch"));
+    public static final RegistryKey<PlacedFeature> COLD_HEMP_PLACED =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "cold_hemp_patch"));
 
     public static void register() {
         // 麻：草原/草甸/普通森林，白桦林与热带草原不长
@@ -60,11 +62,11 @@ public final class ModWorldGen {
                 GenerationStep.Feature.VEGETAL_DECORATION, STRAW_MUSHROOM_PLACED);
 
         // 松茸：雪原/雪林
-        BiomeModifications.addFeature(
-                BiomeSelectors.includeByKey(BiomeKeys.SNOWY_PLAINS, BiomeKeys.SNOWY_TAIGA, BiomeKeys.SNOWY_BEACH,
-                        BiomeKeys.ICE_SPIKES, BiomeKeys.GROVE, BiomeKeys.SNOWY_SLOPES,
-                        BiomeKeys.FROZEN_PEAKS, BiomeKeys.JAGGED_PEAKS, BiomeKeys.FROZEN_RIVER),
-                GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
+        var snowy = BiomeSelectors.includeByKey(BiomeKeys.SNOWY_PLAINS, BiomeKeys.SNOWY_TAIGA, BiomeKeys.SNOWY_BEACH,
+                BiomeKeys.ICE_SPIKES, BiomeKeys.GROVE, BiomeKeys.SNOWY_SLOPES,
+                BiomeKeys.FROZEN_PEAKS, BiomeKeys.JAGGED_PEAKS, BiomeKeys.FROZEN_RIVER);
+        BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
+        BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, COLD_HEMP_PLACED);
 
         // 油菜花：森林与草原
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),

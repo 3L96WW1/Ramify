@@ -16,6 +16,8 @@ public final class ModBlocks {
             .strength(0.3333f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block SISAL = new WildPlantBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
+    public static final Block COLD_HEMP = new HempBlock(AbstractBlock.Settings.create()
+            .strength(0.3333f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block STRAWBERRY_BUSH = new StrawberryBushBlock(AbstractBlock.Settings.create()
             .strength(0.2f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block CORN = new CornBlock(AbstractBlock.Settings.create()
@@ -43,6 +45,7 @@ public final class ModBlocks {
         regBlockOnly("hemp", HEMP);
         regBlockOnly("jute", JUTE);
         regBlockOnly("sisal", SISAL);
+        regBlockOnly("cold_hemp", COLD_HEMP);
         reg("strawberry_bush", STRAWBERRY_BUSH);
         regBlockOnly("corn", CORN);
         regBlockOnly("wild_corn", WILD_CORN);

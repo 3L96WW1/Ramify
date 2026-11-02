@@ -35,7 +35,7 @@ public class StrawberryBushBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return state.get(AGE) >= 2 ? LARGE : SMALL;
+        return LARGE;
     }
 
     @Override
