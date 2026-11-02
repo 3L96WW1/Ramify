@@ -1,23 +1,22 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "ingredients": [
-    {
-      "item": "ramify:hemp_fiber"
-    },
-    {
-      "item": "ramify:hemp_fiber"
-    },
-    {
-      "item": "ramify:hemp_fiber"
-    },
-    {
-      "item": "ramify:hemp_fiber"
-    },
-    {
-      "tag": "ramify:paper"
-    }
+  "pattern": [
+    "fff",
+    "lll",
+    "ppp"
   ],
+  "key": {
+    "f": {
+      "item": "ramify:hemp_fiber"
+    },
+    "l": {
+      "item": "ramify:hemp_leaf"
+    },
+    "p": {
+      "item": "ramify:hemp_paper"
+    }
+  },
   "result": {
     "id": "ramify:bandage",
     "count": 2
