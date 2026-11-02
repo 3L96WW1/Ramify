@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
@@ -92,7 +93,20 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
                 break;
             }
         }
+        for (Item remainder : recipe.remainders()) {
+            addOutput(new ItemStack(remainder));
+        }
         GrillRecipes.consume(this, recipe);
+    }
+
+    private void addOutput(ItemStack stack) {
+        for (int i = 6; i < SIZE; i++) {
+            ItemStack slot = getStack(i);
+            if (slot.isEmpty()) { setStack(i, stack.copy()); return; }
+            if (slot.isOf(stack.getItem()) && slot.getCount() + stack.getCount() <= slot.getMaxCount()) {
+                slot.increment(stack.getCount()); markDirty(); return;
+            }
+        }
     }
 
     private boolean hasIngredients() {

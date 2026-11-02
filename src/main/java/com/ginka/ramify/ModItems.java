@@ -19,6 +19,59 @@ public final class ModItems {
     public static final Item HEMP_FIBER = reg("hemp_fiber", new Item(new Item.Settings()));
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
     public static final Item RAPESEED = reg("rapeseed", new Item(new Item.Settings()));
+
+    public static final Item GRILLED_MEAT = food("grilled_meat", 8, 0.8f);
+    public static final Item BERRY_JAM = food("berry_jam", 4, 0.3f);
+    public static final Item STEAMED_VEGETABLES = food("steamed_vegetables", 6, 0.6f,
+            new StatusEffectInstance(ModEffects.harvestCrit(), 1200, 0));
+    public static final Item VEGETABLE_SALAD = food("vegetable_salad", 6, 0.6f,
+            new StatusEffectInstance(ModEffects.harvestCrit(), 1200, 0));
+    public static final Item HONEY_MUSHROOM = food("honey_mushroom", 6, 0.6f,
+            new StatusEffectInstance(StatusEffects.HASTE, 1200, 0));
+    public static final Item MIXED_PLATTER = food("mixed_platter", 8, 0.8f,
+            new StatusEffectInstance(StatusEffects.HASTE, 1200, 0),
+            new StatusEffectInstance(StatusEffects.LUCK, 1200, 0));
+    public static final Item STRAWBERRY_JELLY = food("strawberry_jelly", 5, 0.5f,
+            new StatusEffectInstance(StatusEffects.SPEED, 1200, 0));
+    public static final Item MEATBALL = food("meatball", 7, 0.7f,
+            new StatusEffectInstance(ModEffects.antiInfection(), 4800, 0),
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item HONEY_ROAST_MEAT = food("honey_roast_meat", 8, 0.8f,
+            new StatusEffectInstance(StatusEffects.REGENERATION, 120, 0),
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item MUSHROOM_MEAT_SKEWER = food("mushroom_meat_skewer", 8, 0.8f,
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item MEAT_SKEWER = food("meat_skewer", 8, 0.8f,
+            new StatusEffectInstance(ModEffects.rangedPower(), 1200, 0),
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item MEAT_LAYERED_PIE = food("meat_layered_pie", 8, 0.8f,
+            new StatusEffectInstance(ModEffects.undeadPower(), 1200, 0),
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item MUSHROOM_LAYERED_PIE = food("mushroom_layered_pie", 7, 0.7f,
+            new StatusEffectInstance(StatusEffects.HASTE, 1200, 0));
+    public static final Item FRUIT_PIE = food("fruit_pie", 7, 0.7f,
+            new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0));
+    public static final Item DUMPLING = food("dumpling", 8, 0.8f,
+            new StatusEffectInstance(ModEffects.warmth(), 2400, 0));
+    public static final Item FRUIT_JUICE = food("fruit_juice", 4, 0.4f,
+            new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 1200, 0));
+    public static final Item STRAWBERRY_JAM = food("strawberry_jam", 5, 0.5f);
+    public static final Item HONEY_CROISSANT = food("honey_croissant", 6, 0.6f);
+    public static final Item VEGETABLE_LAYERED_PIE = food("vegetable_layered_pie", 7, 0.7f,
+            new StatusEffectInstance(StatusEffects.HASTE, 1200, 0));
+    public static final Item FRUIT_PRESERVE = food("fruit_preserve", 5, 0.5f,
+            new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0));
+    public static final Item JAM_BREAD = food("jam_bread", 10, 1.0f);
+    public static final Item PAN_FRIED_FISH = food("pan_fried_fish", 8, 0.8f);
+    public static final Item MILK_CANDY = food("milk_candy", 4, 0.4f,
+            new StatusEffectInstance(StatusEffects.SPEED, 1200, 0),
+            new StatusEffectInstance(ModEffects.antiInfection(), 2400, 0));
+
+    private static Item food(String name, int nutrition, float saturation, StatusEffectInstance... effects) {
+        FoodComponent.Builder builder = new FoodComponent.Builder().nutrition(nutrition).saturationModifier(saturation);
+        for (StatusEffectInstance effect : effects) builder.statusEffect(effect, 1.0f);
+        return reg(name, new Item(new Item.Settings().food(builder.build())));
+    }
     public static final Item MURMUR_BOT = reg("murmur_bot",
             new MurmurBotItem(new Item.Settings().rarity(net.minecraft.util.Rarity.EPIC)));
     public static final Item ROSE = reg("rose", new RoseItem(new Item.Settings()));
@@ -140,6 +193,29 @@ public final class ModItems {
             entries.add(GRILLED_POTATO);
             entries.add(GRILLED_MUSHROOM);
             entries.add(GRILLED_APPLE);
+            entries.add(GRILLED_MEAT);
+            entries.add(BERRY_JAM);
+            entries.add(STEAMED_VEGETABLES);
+            entries.add(VEGETABLE_SALAD);
+            entries.add(HONEY_MUSHROOM);
+            entries.add(MIXED_PLATTER);
+            entries.add(STRAWBERRY_JELLY);
+            entries.add(MEATBALL);
+            entries.add(HONEY_ROAST_MEAT);
+            entries.add(MUSHROOM_MEAT_SKEWER);
+            entries.add(MEAT_SKEWER);
+            entries.add(MEAT_LAYERED_PIE);
+            entries.add(MUSHROOM_LAYERED_PIE);
+            entries.add(FRUIT_PIE);
+            entries.add(DUMPLING);
+            entries.add(FRUIT_JUICE);
+            entries.add(STRAWBERRY_JAM);
+            entries.add(HONEY_CROISSANT);
+            entries.add(VEGETABLE_LAYERED_PIE);
+            entries.add(FRUIT_PRESERVE);
+            entries.add(JAM_BREAD);
+            entries.add(PAN_FRIED_FISH);
+            entries.add(MILK_CANDY);
             entries.add(STRAWBERRY_CAKE);
             entries.add(HONEY_BERRY_CAKE);
             entries.add(CORN_CAKE);

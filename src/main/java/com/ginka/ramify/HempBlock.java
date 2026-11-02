@@ -92,7 +92,16 @@ public class HempBlock extends Block implements Fertilizable {
                 }
             }
         }
-        return super.onBreak(world, pos, state, player);
+        BlockState result = super.onBreak(world, pos, state, player);
+        if (!world.isClient && state.get(HALF) == BlockHalf.BOTTOM && player != null
+                && player.hasStatusEffect(ModEffects.harvestCrit())) {
+            int extraLeaf = 1 + world.random.nextInt(2);
+            Block.dropStack(world, pos, new ItemStack(ModItems.HEMP_LEAF, extraLeaf));
+            if (world.random.nextFloat() < 0.5f) {
+                Block.dropStack(world, pos, new ItemStack(ModItems.HEMP_FIBER, 1));
+            }
+        }
+        return result;
     }
 
     @Override
