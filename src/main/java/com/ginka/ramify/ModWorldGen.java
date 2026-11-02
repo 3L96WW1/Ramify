@@ -74,13 +74,13 @@ public final class ModWorldGen {
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, COLD_HEMP_PLACED);
 
-        // 高山亚麻：草甸/丘陵/山地/石峰，樱花林低权重
-        BiomeModifications.addFeature(
-                BiomeSelectors.includeByKey(BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.WINDSWEPT_FOREST),
-                GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CHERRY_GROVE),
-                GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_CHERRY);
+        // 高山亚麻：Y 96~140，所有非雪地群系
+        var alpine = BiomeSelectors.foundInOverworld().and(ctx -> {
+            String path = ctx.getBiomeKey().getValue().getPath();
+            return !path.contains("snow") && !path.contains("frozen") && !path.contains("ice")
+                    && !path.equals("grove") && !path.equals("jagged_peaks");
+        });
+        BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
 
         // 油菜花：森林与草原
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
