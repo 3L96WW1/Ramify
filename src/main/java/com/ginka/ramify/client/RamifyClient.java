@@ -26,6 +26,7 @@ public class RamifyClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ROSE_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOODEN_SPIKES, RenderLayer.getCutout());
         EntityModelLayerRegistry.registerModelLayer(CrabModel.LAYER, CrabModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(LobsterModel.LAYER, LobsterModel::getTexturedModelData);
         EntityRendererRegistry.register(ModEntities.CRAB, CrabRenderer::new);
         EntityRendererRegistry.register(ModEntities.LOBSTER, LobsterRenderer::new);
         GrillScreen.register();

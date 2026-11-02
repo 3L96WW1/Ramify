@@ -47,6 +47,8 @@ public final class ModEntities {
         BiomeModifications.addSpawn(beaches, SpawnGroup.CREATURE, LOBSTER, 3, 1, 1);
         BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.RIVER, BiomeKeys.FROZEN_RIVER),
                 SpawnGroup.CREATURE, LOBSTER, 1, 1, 1);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP),
+                SpawnGroup.CREATURE, LOBSTER, 2, 1, 1);
     }
 
     private ModEntities() {
