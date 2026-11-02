@@ -34,6 +34,11 @@ public final class ModBlocks {
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
     public static final Block WOODEN_SPIKES = new WoodenSpikesBlock(AbstractBlock.Settings.create().strength(1.0f).sounds(BlockSoundGroup.WOOD).nonOpaque());
     public static final Item CORN_BLOCK = new BlockItem(CORN, new Item.Settings());
+    public static final Block GRILL = new GrillBlock(AbstractBlock.Settings.create().strength(2.0f).sounds(BlockSoundGroup.METAL).nonOpaque());
+    public static final Item GRILL_ITEM = new GrillItem(GRILL, new Item.Settings().maxCount(1));
+    public static final net.minecraft.block.entity.BlockEntityType<GrillBlockEntity> GRILL_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(Ramify.MOD_ID, "grill"),
+                    net.minecraft.block.entity.BlockEntityType.Builder.create(GrillBlockEntity::new, GRILL).build());
 
     private static void reg(String name, Block block) {
         Registry.register(Registries.BLOCK, Identifier.of(Ramify.MOD_ID, name), block);
@@ -57,6 +62,8 @@ public final class ModBlocks {
         reg("matsutake", MATSUTAKE);
         regBlockOnly("rapeseed", RAPESEED);
         Registry.register(Registries.ITEM, Identifier.of(Ramify.MOD_ID, "corn_block"), CORN_BLOCK);
+        regBlockOnly("grill", GRILL);
+        Registry.register(Registries.ITEM, Identifier.of(Ramify.MOD_ID, "grill"), GRILL_ITEM);
         reg("wooden_spikes", WOODEN_SPIKES);
     }
 

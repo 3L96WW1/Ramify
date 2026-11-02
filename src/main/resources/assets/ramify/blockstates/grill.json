@@ -1,0 +1,80 @@
+{
+  "variants": {
+    "part=bottom_left,facing=north": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_left,facing=east": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_left,facing=south": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_left,facing=west": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_middle,facing=north": {
+      "model": "ramify:block/grill",
+      "y": 0
+    },
+    "part=bottom_middle,facing=east": {
+      "model": "ramify:block/grill",
+      "y": 90
+    },
+    "part=bottom_middle,facing=south": {
+      "model": "ramify:block/grill",
+      "y": 180
+    },
+    "part=bottom_middle,facing=west": {
+      "model": "ramify:block/grill",
+      "y": 270
+    },
+    "part=bottom_right,facing=north": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_right,facing=east": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_right,facing=south": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=bottom_right,facing=west": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_left,facing=north": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_left,facing=east": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_left,facing=south": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_left,facing=west": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_middle,facing=north": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_middle,facing=east": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_middle,facing=south": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_middle,facing=west": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_right,facing=north": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_right,facing=east": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_right,facing=south": {
+      "model": "ramify:block/grill_dummy"
+    },
+    "part=top_right,facing=west": {
+      "model": "ramify:block/grill_dummy"
+    }
+  }
+}

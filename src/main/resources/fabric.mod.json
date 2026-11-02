@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "ramify",
   "version": "${version}",
-  "name": "麻 / Ramify",
-  "description": "麻 / Ramify —— 纤维植物、绷带与草药（Minecraft 1.21.1 Fabric）",
+  "name": "\u9ebb / Ramify",
+  "description": "\u9ebb / Ramify \u2014\u2014 \u7ea4\u7ef4\u690d\u7269\u3001\u7ef7\u5e26\u4e0e\u8349\u836f\uff08Minecraft 1.21.1 Fabric\uff09",
   "authors": [
     "GINKA_3L96WW1"
   ],
@@ -22,5 +22,6 @@
     "minecraft": "~1.21.1",
     "java": ">=21",
     "fabric-api": "*"
-  }
+  },
+  "accessWidener": "ramify.accesswidener"
 }

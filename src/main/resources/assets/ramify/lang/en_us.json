@@ -53,5 +53,7 @@
   "item.ramify.lobster_spawn_egg": "Lobster Spawn Egg",
   "entity.ramify.lobster": "Lobster",
   "block.ramify.alpine_flax": "Alpine Flax",
-  "item.ramify.corn_block": "Corn Plant"
+  "item.ramify.corn_block": "Corn Plant",
+  "block.ramify.grill": "Outdoor Grill",
+  "container.ramify.grill": "Outdoor Grill"
 }

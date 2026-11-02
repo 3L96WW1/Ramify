@@ -112,6 +112,7 @@ public final class ModItems {
             entries.add(RAW_LOBSTER);
             entries.add(COOKED_LOBSTER);
         });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(ModBlocks.GRILL_ITEM));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(CRAB_SPAWN_EGG);
             entries.add(LOBSTER_SPAWN_EGG);
