@@ -48,8 +48,23 @@
         {
           "type": "minecraft:block_predicate_filter",
           "predicate": {
-            "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:air"
+              },
+              {
+                "type": "minecraft:would_survive",
+                "state": {
+                  "Name": "ramify:wild_corn",
+                  "Properties": {
+                    "half": "bottom",
+                    "age": "7"
+                  }
+                }
+              }
+            ]
           }
         }
       ]
