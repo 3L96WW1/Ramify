@@ -10,6 +10,7 @@ public class RamifyClient implements ClientModInitializer {
     public void onInitializeClient() {
         // 十字模型必须走 cutout，否则透明区域会渲染成黑色喵
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.HEMP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.COLD_HEMP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.JUTE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SISAL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STRAWBERRY_BUSH, RenderLayer.getCutout());
