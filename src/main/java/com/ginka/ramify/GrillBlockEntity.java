@@ -36,9 +36,9 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
     public static void tick(World world, BlockPos pos, BlockState state, GrillBlockEntity be) {
         if (world.isClient) return;
         boolean changed = false;
-        boolean cooking = be.hasIngredients();
-        if (!cooking) {
-            // 没有原料时不消耗燃料，进度归零
+        GrillRecipes.Recipe recipe = GrillRecipes.find(be);
+        if (recipe == null || !be.hasOutputSpace(recipe.output())) {
+            // 没有匹配配方或成品格满：不消耗燃料，进度归零
             if (be.progress != 0) {
                 be.progress = 0;
                 changed = true;
@@ -62,12 +62,37 @@ public class GrillBlockEntity extends BlockEntity implements Inventory, Extended
         if (be.burnTime > 0) {
             be.progress++;
             if (be.progress >= be.maxProgress) {
+                be.craft(recipe);
                 be.progress = 0;
-                // 配方系统后续接入
             }
             changed = true;
         }
         if (changed) be.markDirty();
+    }
+
+    private boolean hasOutputSpace(ItemStack output) {
+        for (int i = 6; i < SIZE; i++) {
+            ItemStack slot = getStack(i);
+            if (slot.isEmpty()) return true;
+            if (slot.isOf(output.getItem()) && slot.getCount() + output.getCount() <= slot.getMaxCount()) return true;
+        }
+        return false;
+    }
+
+    private void craft(GrillRecipes.Recipe recipe) {
+        for (int i = 6; i < SIZE; i++) {
+            ItemStack slot = getStack(i);
+            if (slot.isEmpty()) {
+                setStack(i, recipe.output().copy());
+                break;
+            }
+            if (slot.isOf(recipe.output().getItem()) && slot.getCount() + recipe.output().getCount() <= slot.getMaxCount()) {
+                slot.increment(recipe.output().getCount());
+                markDirty();
+                break;
+            }
+        }
+        GrillRecipes.consume(this, recipe);
     }
 
     private boolean hasIngredients() {

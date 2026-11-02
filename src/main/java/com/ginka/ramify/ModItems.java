@@ -60,6 +60,25 @@ public final class ModItems {
             .food(new FoodComponent.Builder().nutrition(7).saturationModifier(0.7f).build())));
     public static final Item STRAWBERRY_CAKE = reg("strawberry_cake", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final Item GRILLED_BEEF_SKEWER = reg("grilled_beef_skewer", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(7).saturationModifier(0.7f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 600, 0), 1.0f).build())));
+    public static final Item GRILLED_CHICKEN_SKEWER = reg("grilled_chicken_skewer", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600, 0), 1.0f).build())));
+    public static final Item GRILLED_FISH = reg("grilled_fish", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.WATER_BREATHING, 600, 0), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0), 1.0f).build())));
+    public static final Item GRILLED_POTATO = reg("grilled_potato", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 600, 0), 1.0f).build())));
+    public static final Item GRILLED_MUSHROOM = reg("grilled_mushroom", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(5).saturationModifier(0.5f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200, 0), 1.0f).build())));
+    public static final Item GRILLED_APPLE = reg("grilled_apple", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.4f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 600, 0), 1.0f).build())));
     public static final Item COOKED_SKEWER = reg("cooked_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(8).saturationModifier(0.8f).build())));
     public static final Item RAW_CRAB = reg("raw_crab", new Item(new Item.Settings()
@@ -108,6 +127,12 @@ public final class ModItems {
             entries.add(RAPESEED_SOUP);
             entries.add(RAW_SKEWER);
             entries.add(COOKED_SKEWER);
+            entries.add(GRILLED_BEEF_SKEWER);
+            entries.add(GRILLED_CHICKEN_SKEWER);
+            entries.add(GRILLED_FISH);
+            entries.add(GRILLED_POTATO);
+            entries.add(GRILLED_MUSHROOM);
+            entries.add(GRILLED_APPLE);
             entries.add(STRAWBERRY_CAKE);
             entries.add(HONEY_BERRY_CAKE);
             entries.add(CORN_CAKE);

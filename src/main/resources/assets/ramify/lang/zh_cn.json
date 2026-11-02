@@ -58,5 +58,11 @@
   "container.ramify.grill": "户外烧烤架",
   "block.ramify.rose_bush": "蔷薇丛",
   "item.ramify.rose": "蔷薇",
-  "item.ramify.rose_seeds": "蔷薇种子"
+  "item.ramify.rose_seeds": "蔷薇种子",
+  "item.ramify.grilled_beef_skewer": "烤牛肉串",
+  "item.ramify.grilled_chicken_skewer": "烤鸡肉串",
+  "item.ramify.grilled_fish": "烤鱼",
+  "item.ramify.grilled_potato": "烤土豆",
+  "item.ramify.grilled_mushroom": "烤蘑菇",
+  "item.ramify.grilled_apple": "烤苹果"
 }

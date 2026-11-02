@@ -58,5 +58,11 @@
   "container.ramify.grill": "Outdoor Grill",
   "block.ramify.rose_bush": "Rose Bush",
   "item.ramify.rose": "Rose",
-  "item.ramify.rose_seeds": "Rose Seeds"
+  "item.ramify.rose_seeds": "Rose Seeds",
+  "item.ramify.grilled_beef_skewer": "Grilled Beef Skewer",
+  "item.ramify.grilled_chicken_skewer": "Grilled Chicken Skewer",
+  "item.ramify.grilled_fish": "Grilled Fish",
+  "item.ramify.grilled_potato": "Grilled Potato",
+  "item.ramify.grilled_mushroom": "Grilled Mushroom",
+  "item.ramify.grilled_apple": "Grilled Apple"
 }
