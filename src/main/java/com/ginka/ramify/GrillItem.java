@@ -17,10 +17,10 @@ public class GrillItem extends BlockItem {
     @Override
     public net.minecraft.util.ActionResult place(ItemPlacementContext context) {
         World world = context.getWorld();
-        BlockPos clicked = context.getBlockPos();
+        // getBlockPos() 已经是“将要放置的位置”（点击方块 + 面），不要再 offset 一次
+        BlockPos controller = context.getBlockPos();
         Direction facing = context.getHorizontalPlayerFacing().getOpposite();
         Direction right = facing.rotateYClockwise();
-        BlockPos controller = clicked.offset(context.getSide());
         // 控制器放在底排中间，整体宽 3 高 2
         BlockPos[] positions = new BlockPos[]{
                 controller, controller.offset(right), controller.offset(right.getOpposite()),
