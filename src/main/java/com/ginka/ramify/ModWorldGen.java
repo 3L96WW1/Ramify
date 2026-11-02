@@ -44,6 +44,8 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "cold_hemp_high_patch"));
     public static final RegistryKey<PlacedFeature> ALPINE_FLAX_HIGH =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_high"));
+    public static final RegistryKey<PlacedFeature> ROSE_BUSH_PLACED =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "rose_bush_patch"));
 
     public static void register() {
         HeightFilterPlacementModifier.init();
@@ -88,6 +90,11 @@ public final class ModWorldGen {
         });
         BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
         BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_HIGH);
+
+        // 蔷薇丛：花林/草原/草甸/森林少量生成
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(BiomeKeys.FLOWER_FOREST, BiomeKeys.PLAINS, BiomeKeys.MEADOW, BiomeKeys.FOREST),
+                GenerationStep.Feature.VEGETAL_DECORATION, ROSE_BUSH_PLACED);
 
         // 油菜花：森林与草原
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),

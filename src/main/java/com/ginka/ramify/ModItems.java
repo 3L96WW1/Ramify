@@ -20,6 +20,8 @@ public final class ModItems {
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
     public static final Item RAPESEED = reg("rapeseed", new Item(new Item.Settings()));
     public static final Item MURMUR_BOT = reg("murmur_bot", new Item(new Item.Settings()));
+    public static final Item ROSE = reg("rose", new RoseItem(new Item.Settings()));
+    public static final Item ROSE_SEEDS = reg("rose_seeds", new RoseSeedsItem(new Item.Settings(), ModBlocks.ROSE_BUSH));
 
     // 药品
     public static final Item BANDAGE = reg("bandage", new BandageItem(new Item.Settings().maxCount(16)));
@@ -95,6 +97,7 @@ public final class ModItems {
             entries.add(HEMP_FIBER);
             entries.add(RAPESEED);
             entries.add(HEMP_PAPER);
+            entries.add(ROSE);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
             entries.add(STRAWBERRY);
@@ -125,7 +128,9 @@ public final class ModItems {
             entries.add(ModBlocks.ALPINE_FLAX);
             entries.add(ModBlocks.STRAWBERRY_BUSH);
             entries.add(ModBlocks.CORN_BLOCK);
+            entries.add(ROSE_SEEDS);
             entries.add(CORN_SEEDS);
+            entries.add(ModBlocks.ROSE_BUSH);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
         });

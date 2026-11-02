@@ -55,5 +55,8 @@
   "block.ramify.alpine_flax": "高山亚麻",
   "item.ramify.corn_block": "玉米植株",
   "block.ramify.grill": "户外烧烤架",
-  "container.ramify.grill": "户外烧烤架"
+  "container.ramify.grill": "户外烧烤架",
+  "block.ramify.rose_bush": "蔷薇丛",
+  "item.ramify.rose": "蔷薇",
+  "item.ramify.rose_seeds": "蔷薇种子"
 }

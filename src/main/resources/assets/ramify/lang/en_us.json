@@ -55,5 +55,8 @@
   "block.ramify.alpine_flax": "Alpine Flax",
   "item.ramify.corn_block": "Corn Plant",
   "block.ramify.grill": "Outdoor Grill",
-  "container.ramify.grill": "Outdoor Grill"
+  "container.ramify.grill": "Outdoor Grill",
+  "block.ramify.rose_bush": "Rose Bush",
+  "item.ramify.rose": "Rose",
+  "item.ramify.rose_seeds": "Rose Seeds"
 }

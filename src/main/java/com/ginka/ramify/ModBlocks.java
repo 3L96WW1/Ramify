@@ -26,6 +26,8 @@ public final class ModBlocks {
             .strength(0.1333f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision(), false);
     public static final Block WILD_CORN = new CornBlock(AbstractBlock.Settings.create()
             .strength(0.1333f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision(), true);
+    public static final Block ROSE_BUSH = new RoseBushBlock(AbstractBlock.Settings.create()
+            .strength(0.3f).sounds(BlockSoundGroup.GRASS).nonOpaque().ticksRandomly().noCollision());
     public static final Block STRAW_MUSHROOM = new WildPlantBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
     public static final Block MATSUTAKE = new WildPlantBlock(AbstractBlock.Settings.create()
@@ -58,6 +60,7 @@ public final class ModBlocks {
         reg("strawberry_bush", STRAWBERRY_BUSH);
         regBlockOnly("corn", CORN);
         regBlockOnly("wild_corn", WILD_CORN);
+        reg("rose_bush", ROSE_BUSH);
         reg("straw_mushroom", STRAW_MUSHROOM);
         reg("matsutake", MATSUTAKE);
         regBlockOnly("rapeseed", RAPESEED);

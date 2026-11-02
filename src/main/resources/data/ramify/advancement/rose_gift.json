@@ -1,0 +1,35 @@
+{
+  "parent": "ramify:root",
+  "display": {
+    "icon": {
+      "id": "ramify:rose"
+    },
+    "title": {
+      "text": "\u6211\u5728\u5462\uff0c\u6211\u4e00\u76f4\u90fd\u5728"
+    },
+    "description": {
+      "text": "\u7b2c\u4e00\u773c\u5b69\u5b50\u53eb\u4ec0\u4e48\u90fd\u60f3\u597d\u4e86\n",
+      "color": "white",
+      "extra": [
+        {
+          "text": "\u514b\u62c9\u62c9\uff1a\u4f60\u7684\u8868\u767d\u70c2\u900f\u4e86",
+          "color": "dark_gray"
+        }
+      ]
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "manual": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "manual"
+    ]
+  ]
+}
