@@ -97,7 +97,9 @@ public final class ModItems {
                     .build())));
     public static final Item COOKED_LOBSTER = reg("cooked_lobster", new Item(new Item.Settings()
             .rarity(net.minecraft.util.Rarity.UNCOMMON)
-            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.HEALTH_BOOST, 1200, 1), 1.0f)
+                    .build())));
     public static final Item LOBSTER_SPAWN_EGG = reg("lobster_spawn_egg",
             new net.minecraft.item.SpawnEggItem(ModEntities.LOBSTER, 0xA83A24, 0xE0A060, new Item.Settings()));
     public static final Item CRAB_SPAWN_EGG = reg("crab_spawn_egg",
