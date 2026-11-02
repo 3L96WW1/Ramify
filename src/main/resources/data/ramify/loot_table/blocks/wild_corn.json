@@ -10,7 +10,7 @@
         },
         {
           "condition": "minecraft:block_state_property",
-          "block": "ramify:corn",
+          "block": "ramify:wild_corn",
           "properties": {
             "half": "bottom"
           }
@@ -32,7 +32,7 @@
         },
         {
           "condition": "minecraft:block_state_property",
-          "block": "ramify:corn",
+          "block": "ramify:wild_corn",
           "properties": {
             "half": "bottom"
           }
