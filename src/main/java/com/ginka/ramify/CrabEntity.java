@@ -45,8 +45,14 @@ public class CrabEntity extends PathAwareEntity {
 
     public static boolean canSpawn(EntityType<CrabEntity> type, ServerWorldAccess world, SpawnReason reason,
                                    BlockPos pos, Random random) {
-        return world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.SAND)
-                || world.getBlockState(pos.down()).isOf(net.minecraft.block.Blocks.GRAVEL);
+        var floor = world.getBlockState(pos.down());
+        return floor.isOf(net.minecraft.block.Blocks.SAND)
+                || floor.isOf(net.minecraft.block.Blocks.GRAVEL)
+                || floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK)
+                || floor.isOf(net.minecraft.block.Blocks.DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT)
+                || floor.isOf(net.minecraft.block.Blocks.PODZOL)
+                || floor.isOf(net.minecraft.block.Blocks.MUD);
     }
 
     @Override
