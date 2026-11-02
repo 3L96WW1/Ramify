@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 /** 肾上腺素：力量、抗性提升、速度 II 各 4 分钟喵 */
 public class AdrenalineItem extends Item {
-    private static final int DURATION = 20 * 60 * 4;
+    private static final int DURATION = 20 * 150;
 
     public AdrenalineItem(Settings settings) {
         super(settings);
