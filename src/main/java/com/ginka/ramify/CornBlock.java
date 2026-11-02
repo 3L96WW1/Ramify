@@ -138,7 +138,7 @@ public class CornBlock extends Block implements Fertilizable {
             return net.minecraft.util.ActionResult.PASS;
         }
         if (!world.isClient) {
-            int count = 1 + world.random.nextInt(2);
+            int count = 2 + world.random.nextInt(2);
             net.minecraft.block.Block.dropStack(world, bottomPos,
                     new net.minecraft.item.ItemStack(ModItems.CORN, count));
             net.minecraft.block.Block.dropStack(world, bottomPos,

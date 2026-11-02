@@ -12,14 +12,24 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:wild_corn",
           "properties": {
-            "half": "bottom"
+            "half": "bottom",
+            "age": "7"
           }
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ramify:corn"
+          "name": "ramify:corn",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 3
+              }
+            }
+          ]
         }
       ]
     },
@@ -34,14 +44,24 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:wild_corn",
           "properties": {
-            "half": "bottom"
+            "half": "bottom",
+            "age": "7"
           }
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ramify:corn_seeds"
+          "name": "ramify:corn_seeds",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
         }
       ]
     }
