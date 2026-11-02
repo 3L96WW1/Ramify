@@ -9,9 +9,9 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
-public class CrabRenderer extends MobEntityRenderer<CrabEntity, CrabModel> {
+public class CrabRenderer extends MobEntityRenderer<CrabEntity, CrabModel<CrabEntity>> {
     public CrabRenderer(EntityRendererFactory.Context context) {
-        super(context, new CrabModel(context.getPart(CrabModel.LAYER)), 0.4f);
+        super(context, new CrabModel<CrabEntity>(context.getPart(CrabModel.LAYER)), 0.4f);
     }
 
     @Override

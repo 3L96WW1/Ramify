@@ -47,5 +47,9 @@
   "item.ramify.cooked_skewer": "Cooked Skewer",
   "item.ramify.strawberry_cake": "Strawberry Cupcake",
   "item.ramify.honey_berry_cake": "Honey Berry Cupcake",
-  "item.ramify.corn_cake": "Corn Cupcake"
+  "item.ramify.corn_cake": "Corn Cupcake",
+  "item.ramify.raw_lobster": "Raw Lobster",
+  "item.ramify.cooked_lobster": "Cooked Lobster",
+  "item.ramify.lobster_spawn_egg": "Lobster Spawn Egg",
+  "entity.ramify.lobster": "Lobster"
 }

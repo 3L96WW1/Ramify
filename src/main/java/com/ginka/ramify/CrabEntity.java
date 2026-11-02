@@ -43,7 +43,7 @@ public class CrabEntity extends PathAwareEntity {
         this.goalSelector.add(7, new LookAroundGoal(this));
     }
 
-    public static boolean canSpawn(EntityType<CrabEntity> type, ServerWorldAccess world, SpawnReason reason,
+    public static <T extends CrabEntity> boolean canSpawn(EntityType<T> type, ServerWorldAccess world, SpawnReason reason,
                                    BlockPos pos, Random random) {
         var floor = world.getBlockState(pos.down());
         return floor.isOf(net.minecraft.block.Blocks.SAND)

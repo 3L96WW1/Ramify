@@ -68,6 +68,12 @@ public final class ModItems {
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1200, 0), 1.0f)
                     .build())));
+    public static final Item RAW_LOBSTER = reg("raw_lobster", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build())));
+    public static final Item COOKED_LOBSTER = reg("cooked_lobster", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
+    public static final Item LOBSTER_SPAWN_EGG = reg("lobster_spawn_egg",
+            new net.minecraft.item.SpawnEggItem(ModEntities.LOBSTER, 0xA83A24, 0xE0A060, new Item.Settings()));
     public static final Item CRAB_SPAWN_EGG = reg("crab_spawn_egg",
             new net.minecraft.item.SpawnEggItem(ModEntities.CRAB, 0xE06A3A, 0xF2C28A, new Item.Settings()));
     public static final Item CORN_SEEDS = reg("corn_seeds", new SeedsItem(new Item.Settings(), ModBlocks.CORN));
@@ -103,8 +109,13 @@ public final class ModItems {
             entries.add(CORN_CAKE);
             entries.add(RAW_CRAB);
             entries.add(COOKED_CRAB);
+            entries.add(RAW_LOBSTER);
+            entries.add(COOKED_LOBSTER);
         });
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(CRAB_SPAWN_EGG));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
+            entries.add(CRAB_SPAWN_EGG);
+            entries.add(LOBSTER_SPAWN_EGG);
+        });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(CORN_SEEDS);
             entries.add(ModBlocks.STRAW_MUSHROOM);

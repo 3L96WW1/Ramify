@@ -8,12 +8,13 @@ import net.minecraft.client.model.ModelPartData;
 import net.minecraft.client.model.ModelTransform;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.render.VertexConsumer;
 
-public class CrabModel extends EntityModel<CrabEntity> {
+public class CrabModel<T extends PathAwareEntity> extends EntityModel<T> {
     public static final EntityModelLayer LAYER = new EntityModelLayer(Identifier.of("ramify", "crab"), "main");
 
     private final ModelPart body;
@@ -78,7 +79,7 @@ public class CrabModel extends EntityModel<CrabEntity> {
     }
 
     @Override
-    public void setAngles(CrabEntity entity, float limbAngle, float limbDistance, float animationProgress,
+    public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress,
                           float headYaw, float headPitch) {
         float swing = (float) Math.sin(limbAngle) * 0.4f * limbDistance;
         for (int i = 0; i < legs.length; i++) {

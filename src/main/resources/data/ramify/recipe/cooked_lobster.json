@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "ingredient": {
+    "item": "ramify:raw_lobster"
+  },
+  "result": {
+    "id": "ramify:cooked_lobster",
+    "count": 1
+  },
+  "experience": 0.35,
+  "cookingtime": 200
+}
