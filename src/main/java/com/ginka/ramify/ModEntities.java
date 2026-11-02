@@ -28,10 +28,10 @@ public final class ModEntities {
                     .build());
 
     public static void register() {
-        var beaches = BiomeSelectors.includeByKey(BiomeKeys.BEACH, BiomeKeys.SNOWY_BEACH, BiomeKeys.RIVER);
+        var beaches = BiomeSelectors.includeByKey(BiomeKeys.BEACH, BiomeKeys.SNOWY_BEACH);
         BiomeModifications.addSpawn(beaches, SpawnGroup.CREATURE, CRAB, 20, 1, 4);
-        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.RIVER), SpawnGroup.CREATURE,
-                CRAB, 4, 1, 2);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.RIVER, BiomeKeys.FROZEN_RIVER),
+                SpawnGroup.CREATURE, CRAB, 2, 1, 1);
     }
 
     private ModEntities() {
