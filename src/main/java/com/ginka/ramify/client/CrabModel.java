@@ -19,12 +19,16 @@ public class CrabModel extends EntityModel<CrabEntity> {
     private final ModelPart body;
     private final ModelPart clawLeft;
     private final ModelPart clawRight;
+    private final ModelPart eyeLeft;
+    private final ModelPart eyeRight;
     private final ModelPart[] legs;
 
     public CrabModel(ModelPart root) {
         this.body = root.getChild("body");
         this.clawLeft = root.getChild("claw_left");
         this.clawRight = root.getChild("claw_right");
+        this.eyeLeft = root.getChild("eye_left");
+        this.eyeRight = root.getChild("eye_right");
         this.legs = new ModelPart[]{
                 root.getChild("leg_l1"), root.getChild("leg_l2"), root.getChild("leg_l3"),
                 root.getChild("leg_r1"), root.getChild("leg_r2"), root.getChild("leg_r3")
@@ -43,6 +47,12 @@ public class CrabModel extends EntityModel<CrabEntity> {
         root.addChild("claw_right", ModelPartBuilder.create().uv(0, 16)
                         .cuboid(-1.0f, -1.0f, -1.0f, 3, 2, 5),
                 ModelTransform.of(5.0f, 20.0f, -2.0f, 0.0f, -0.5f, 0.0f));
+        root.addChild("eye_left", ModelPartBuilder.create().uv(40, 0)
+                        .cuboid(-0.5f, -0.5f, -0.5f, 1, 1, 1),
+                ModelTransform.pivot(-2.0f, 17.5f, -4.2f));
+        root.addChild("eye_right", ModelPartBuilder.create().uv(40, 0)
+                        .cuboid(-0.5f, -0.5f, -0.5f, 1, 1, 1),
+                ModelTransform.pivot(2.0f, 17.5f, -4.2f));
         for (int i = 0; i < 3; i++) {
             float z = -2.0f + i * 2.5f;
             root.addChild("leg_l" + (i + 1), ModelPartBuilder.create().uv(0, 32)
@@ -60,6 +70,8 @@ public class CrabModel extends EntityModel<CrabEntity> {
         body.render(matrices, vertices, light, overlay, color);
         clawLeft.render(matrices, vertices, light, overlay, color);
         clawRight.render(matrices, vertices, light, overlay, color);
+        eyeLeft.render(matrices, vertices, light, overlay, color);
+        eyeRight.render(matrices, vertices, light, overlay, color);
         for (ModelPart leg : legs) {
             leg.render(matrices, vertices, light, overlay, color);
         }

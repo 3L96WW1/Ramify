@@ -10,6 +10,7 @@ import net.minecraft.entity.SpawnLocationTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BiomeTags;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
 
@@ -28,7 +29,9 @@ public final class ModEntities {
 
     public static void register() {
         BiomeModifications.addSpawn(BiomeSelectors.tag(BiomeTags.IS_BEACH), SpawnGroup.CREATURE,
-                CRAB, 2, 1, 2);
+                CRAB, 10, 1, 3);
+        BiomeModifications.addSpawn(BiomeSelectors.includeByKey(BiomeKeys.RIVER), SpawnGroup.CREATURE,
+                CRAB, 2, 1, 1);
     }
 
     private ModEntities() {

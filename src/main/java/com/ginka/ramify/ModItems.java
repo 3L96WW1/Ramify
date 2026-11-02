@@ -51,6 +51,8 @@ public final class ModItems {
                     .build())));
     public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
+    public static final Item COOKED_SKEWER = reg("cooked_skewer", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(8).saturationModifier(0.8f).build())));
     public static final Item RAW_CRAB = reg("raw_crab", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 0), 1.0f)
@@ -89,6 +91,7 @@ public final class ModItems {
             entries.add(MUSHROOM_SOUP);
             entries.add(RAPESEED_SOUP);
             entries.add(RAW_SKEWER);
+            entries.add(COOKED_SKEWER);
             entries.add(RAW_CRAB);
             entries.add(COOKED_CRAB);
         });
