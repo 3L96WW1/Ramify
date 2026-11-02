@@ -86,6 +86,10 @@ public class GrillScreenHandler extends ScreenHandler {
         }
     }
 
+    public ItemStack getOutputStack(int index) {
+        return inventory.getStack(6 + index);
+    }
+
     private static boolean isGrillFuel(ItemStack stack) {
         return stack.isIn(ItemTags.COALS) || stack.isOf(Items.CHARCOAL)
                 || stack.isIn(ItemTags.LOGS) || stack.isIn(ItemTags.PLANKS)

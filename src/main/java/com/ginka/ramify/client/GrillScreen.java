@@ -94,6 +94,13 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         context.drawText(this.textRenderer, "进度", 16, 153, 0xAAAAAA, false);
         context.drawText(this.textRenderer, "成品列表", 154, 26, 0xAAAAAA, false);
         context.drawText(this.textRenderer, this.playerInventoryTitle, 10, 178, 0xAAAAAA, false);
+        // 成品名称
+        for (int i = 0; i < 8; i++) {
+            var stack = handler.getOutputStack(i);
+            if (!stack.isEmpty()) {
+                context.drawText(this.textRenderer, stack.getName(), 174, 21 + i * 16, 0xFFFFFF, false);
+            }
+        }
     }
 
     public static void register() {

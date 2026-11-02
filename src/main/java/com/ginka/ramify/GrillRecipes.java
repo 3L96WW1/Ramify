@@ -16,8 +16,12 @@ public final class GrillRecipes {
         return new Recipe(ingredients, new ItemStack(output));
     }
 
+    private static Recipe recipe(List<Item> ingredients, Item output, int count) {
+        return new Recipe(ingredients, new ItemStack(output, count));
+    }
+
     private static final List<Recipe> RECIPES = List.of(
-            recipe(List.of(ModItems.CORN, ModItems.CORN, ModItems.CORN, ModItems.CORN), ModItems.ROASTED_CORN),
+            recipe(List.of(ModItems.CORN, ModItems.CORN, ModItems.CORN, ModItems.CORN), ModItems.ROASTED_CORN, 4),
             recipe(List.of(ModItems.RAW_SKEWER, Items.SWEET_BERRIES, Items.SWEET_BERRIES, Items.SWEET_BERRIES), ModItems.COOKED_SKEWER),
             recipe(List.of(ModItems.RAW_CRAB, Items.SWEET_BERRIES, Items.SWEET_BERRIES, Items.SWEET_BERRIES), ModItems.COOKED_CRAB),
             recipe(List.of(ModItems.RAW_LOBSTER, Items.SWEET_BERRIES, Items.SWEET_BERRIES, Items.SWEET_BERRIES), ModItems.COOKED_LOBSTER),
