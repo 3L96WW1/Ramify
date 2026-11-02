@@ -20,7 +20,7 @@ public class GrillItem extends BlockItem {
         BlockPos clicked = context.getBlockPos();
         Direction facing = context.getHorizontalPlayerFacing().getOpposite();
         Direction right = facing.rotateYClockwise();
-        BlockPos controller = clicked.offset(context.getSide()).offset(right.getOpposite());
+        BlockPos controller = clicked.offset(context.getSide());
         // 控制器放在底排中间，整体宽 3 高 2
         BlockPos[] positions = new BlockPos[]{
                 controller, controller.offset(right), controller.offset(right.getOpposite()),
