@@ -29,7 +29,7 @@ public class GrillRecipeScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.renderBackground(context, mouseX, mouseY, delta);
+        context.fill(0, 0, this.width, this.height, 0x99000000);
         int left = this.width / 2 - 180;
         int top = this.height / 2 - 120;
         context.fill(left, top, left + 360, top + 250, 0xF01B1B1B);
@@ -54,6 +54,11 @@ public class GrillRecipeScreen extends Screen {
         context.fill(left + 350, top + 24, left + 354, top + 24 + barHeight, 0xFF333333);
         context.fill(left + 350, thumbY, left + 354, thumbY + thumb, 0xFFAAAAAA);
         super.render(context, mouseX, mouseY, delta);
+    }
+
+    @Override
+    public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
+        // 关闭原版菜单背景模糊，避免配方文字发虚
     }
 
     @Override
