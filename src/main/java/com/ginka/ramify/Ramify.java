@@ -12,6 +12,7 @@ public class Ramify implements ModInitializer {
         ModEffects.register();
         ModBlocks.register();
         ModItems.register();
+        ModTrades.register();
         ModWorldGen.register();
     }
 }
