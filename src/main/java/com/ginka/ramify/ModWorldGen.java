@@ -45,10 +45,9 @@ public final class ModWorldGen {
         HeightFilterPlacementModifier.init();
         // 麻：草原/草甸/普通森林，白桦林与热带草原不长
         var plains = BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS, BiomeKeys.MEADOW);
-        var hempLowlands = BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
-        BiomeModifications.addFeature(hempLowlands, GenerationStep.Feature.VEGETAL_DECORATION, HEMP_PLACED);
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
-                GenerationStep.Feature.VEGETAL_DECORATION, HEMP_PLACED);
+        BiomeModifications.addFeature(plains, GenerationStep.Feature.VEGETAL_DECORATION, HEMP_PLACED);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST,
+                BiomeKeys.TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, HEMP_PLACED);
         BiomeModifications.addFeature(plains, GenerationStep.Feature.VEGETAL_DECORATION, CORN_PLACED);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.FOREST, BiomeKeys.FLOWER_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, CORN_PLACED);
