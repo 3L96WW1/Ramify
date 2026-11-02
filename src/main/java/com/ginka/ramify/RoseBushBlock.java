@@ -3,6 +3,7 @@ package com.ginka.ramify;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.Fertilizable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 /** 蔷薇丛：野外生成，种子只可种在耕地上，成熟后打掉给种子+蔷薇喵 */
-public class RoseBushBlock extends Block {
+public class RoseBushBlock extends Block implements Fertilizable {
     public static final IntProperty AGE = IntProperty.of("age", 0, 3);
     private static final VoxelShape SHAPE = Block.createCuboidShape(1, 0, 1, 15, 16, 15);
 
@@ -51,6 +52,23 @@ public class RoseBushBlock extends Block {
                                                    BlockPos pos, BlockPos neighborPos) {
         return canPlaceAt(state, world, pos) ? super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos)
                 : net.minecraft.block.Blocks.AIR.getDefaultState();
+    }
+
+    @Override
+    public boolean isFertilizable(net.minecraft.world.WorldView world, BlockPos pos, BlockState state) {
+        return state.get(AGE) < 3;
+    }
+
+    @Override
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        return state.get(AGE) < 3;
+    }
+
+    @Override
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+        if (state.get(AGE) < 3) {
+            world.setBlockState(pos, state.with(AGE, Math.min(3, state.get(AGE) + 1)), Block.NOTIFY_LISTENERS);
+        }
     }
 
     @Override
