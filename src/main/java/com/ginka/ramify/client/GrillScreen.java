@@ -4,6 +4,7 @@ import com.ginka.ramify.GrillScreenHandler;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
+import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 
@@ -19,6 +20,14 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         this.backgroundWidth = 256;
         this.backgroundHeight = 288;
         this.playerInventoryTitleY = 178;
+    }
+
+    @Override
+    protected void init() {
+        super.init();
+        this.addDrawableChild(ButtonWidget.builder(Text.literal("配方"),
+                button -> this.client.setScreen(new GrillRecipeScreen(this)))
+                .dimensions(this.x + 204, this.y + 2, 44, 16).build());
     }
 
     @Override

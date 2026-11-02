@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -77,6 +78,40 @@ public final class GrillRecipes {
 
     public static Recipe mystery() {
         return r(ModItems.MYSTERY_STEW, ANY, ANY, ANY, ANY);
+    }
+
+    public record Display(ItemStack output, String ingredients) {
+    }
+
+    public static List<Display> displayEntries() {
+        List<Display> list = new ArrayList<>();
+        list.add(new Display(new ItemStack(ModItems.STRAWBERRY_JAM, 1), "4 草莓"));
+        list.add(new Display(new ItemStack(ModItems.BERRY_JAM, 1), "4 任意浆果"));
+        list.add(new Display(new ItemStack(ModItems.COOKED_LOBSTER, 1), "生龙虾 + 3 浆果"));
+        list.add(new Display(new ItemStack(ModItems.ROASTED_CORN, 4), "4 玉米"));
+        list.add(new Display(new ItemStack(ModItems.GRILLED_MEAT, 1), "4 生猪排/生牛肉"));
+        list.add(new Display(new ItemStack(ModItems.GRILLED_MUSHROOM, 1), "4 任意蘑菇"));
+        list.add(new Display(new ItemStack(ModItems.STEAMED_VEGETABLES, 1), "4 胡萝卜/油菜"));
+        list.add(new Display(new ItemStack(ModItems.VEGETABLE_SALAD, 1), "2 蔬菜 + 2 水果"));
+        list.add(new Display(new ItemStack(ModItems.HONEY_MUSHROOM, 1), "2 蘑菇 + 2 蜂蜜"));
+        list.add(new Display(new ItemStack(ModItems.MIXED_PLATTER, 1), "1 肉 + 1 蔬菜 + 1 浆果 + 1 蘑菇"));
+        list.add(new Display(new ItemStack(ModItems.STRAWBERRY_JELLY, 1), "2 草莓 + 牛奶桶 + 冰块"));
+        list.add(new Display(new ItemStack(ModItems.MEATBALL, 1), "2 油菜 + 2 生猪排"));
+        list.add(new Display(new ItemStack(ModItems.HONEY_ROAST_MEAT, 1), "2 肉 + 2 蜂蜜"));
+        list.add(new Display(new ItemStack(ModItems.MUSHROOM_MEAT_SKEWER, 1), "2 肉 + 2 蘑菇"));
+        list.add(new Display(new ItemStack(ModItems.MEAT_SKEWER, 1), "2 肉 + 2 水果"));
+        list.add(new Display(new ItemStack(ModItems.MEAT_LAYERED_PIE, 1), "2 肉 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.MUSHROOM_LAYERED_PIE, 1), "2 蘑菇 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.FRUIT_PIE, 1), "1 水果 + 1 蜂蜜 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.DUMPLING, 1), "1 肉 + 1 蘑菇 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.FRUIT_JUICE, 1), "2 水果 + 1 冰块 + 1 水桶"));
+        list.add(new Display(new ItemStack(ModItems.HONEY_CROISSANT, 1), "2 小麦 + 2 蜂蜜"));
+        list.add(new Display(new ItemStack(ModItems.VEGETABLE_LAYERED_PIE, 1), "2 油菜 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.FRUIT_PRESERVE, 1), "2 浆果 + 1 蜂蜜 + 1 糖"));
+        list.add(new Display(new ItemStack(ModItems.JAM_BREAD, 1), "2 浆果 + 2 小麦"));
+        list.add(new Display(new ItemStack(ModItems.PAN_FRIED_FISH, 1), "2 鳕鱼/鲑鱼 + 2 油菜"));
+        list.add(new Display(new ItemStack(ModItems.MILK_CANDY, 1), "2 蜂蜜 + 2 牛奶桶"));
+        return list;
     }
 
     public static Recipe find(Inventory inventory) {
