@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " cs",
+    " eH",
+    " ww"
+  ],
+  "key": {
+    "c": {
+      "item": "ramify:corn"
+    },
+    "s": {
+      "item": "minecraft:sugar"
+    },
+    "e": {
+      "item": "minecraft:egg"
+    },
+    "H": {
+      "item": "minecraft:honey_bottle"
+    },
+    "w": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "id": "ramify:corn_cake",
+    "count": 1
+  }
+}

@@ -51,6 +51,8 @@ public final class ModItems {
                     .build())));
     public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
+    public static final Item CORN_CAKE = reg("corn_cake", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(7).saturationModifier(0.7f).build())));
     public static final Item HONEY_BERRY_CAKE = reg("honey_berry_cake", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(7).saturationModifier(0.7f).build())));
     public static final Item STRAWBERRY_CAKE = reg("strawberry_cake", new Item(new Item.Settings()
@@ -98,6 +100,7 @@ public final class ModItems {
             entries.add(COOKED_SKEWER);
             entries.add(STRAWBERRY_CAKE);
             entries.add(HONEY_BERRY_CAKE);
+            entries.add(CORN_CAKE);
             entries.add(RAW_CRAB);
             entries.add(COOKED_CRAB);
         });
