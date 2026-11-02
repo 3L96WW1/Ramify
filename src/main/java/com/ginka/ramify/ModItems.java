@@ -117,6 +117,13 @@ public final class ModItems {
             entries.add(LOBSTER_SPAWN_EGG);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.add(ModBlocks.HEMP);
+            entries.add(ModBlocks.JUTE);
+            entries.add(ModBlocks.SISAL);
+            entries.add(ModBlocks.COLD_HEMP);
+            entries.add(ModBlocks.ALPINE_FLAX);
+            entries.add(ModBlocks.STRAWBERRY_BUSH);
+            entries.add(ModBlocks.CORN_BLOCK);
             entries.add(CORN_SEEDS);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);

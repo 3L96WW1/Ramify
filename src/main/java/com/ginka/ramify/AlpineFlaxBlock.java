@@ -5,7 +5,7 @@ import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
 
-/** 高山亚麻：能长在草甸/丘陵/山地石面上喵 */
+/** 高山亚麻：只长在草地/泥土上喵 */
 public class AlpineFlaxBlock extends HempBlock {
     public AlpineFlaxBlock(Settings settings) {
         super(settings);
@@ -20,13 +20,6 @@ public class AlpineFlaxBlock extends HempBlock {
         return floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK)
                 || floor.isOf(net.minecraft.block.Blocks.DIRT)
                 || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT)
-                || floor.isOf(net.minecraft.block.Blocks.PODZOL)
-                || floor.isOf(net.minecraft.block.Blocks.STONE)
-                || floor.isOf(net.minecraft.block.Blocks.GRANITE)
-                || floor.isOf(net.minecraft.block.Blocks.DIORITE)
-                || floor.isOf(net.minecraft.block.Blocks.ANDESITE)
-                || floor.isOf(net.minecraft.block.Blocks.GRAVEL)
-                || floor.isOf(net.minecraft.block.Blocks.TUFF)
-                || floor.isOf(net.minecraft.block.Blocks.CALCITE);
+                || floor.isOf(net.minecraft.block.Blocks.PODZOL);
     }
 }

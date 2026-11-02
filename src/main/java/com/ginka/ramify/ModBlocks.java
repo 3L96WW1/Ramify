@@ -33,6 +33,7 @@ public final class ModBlocks {
     public static final Block RAPESEED = new WildPlantBlock(AbstractBlock.Settings.create()
             .breakInstantly().sounds(BlockSoundGroup.GRASS).nonOpaque().noCollision());
     public static final Block WOODEN_SPIKES = new WoodenSpikesBlock(AbstractBlock.Settings.create().strength(1.0f).sounds(BlockSoundGroup.WOOD).nonOpaque());
+    public static final Item CORN_BLOCK = new BlockItem(CORN, new Item.Settings());
 
     private static void reg(String name, Block block) {
         Registry.register(Registries.BLOCK, Identifier.of(Ramify.MOD_ID, name), block);
@@ -44,17 +45,18 @@ public final class ModBlocks {
     }
 
     public static void register() {
-        regBlockOnly("hemp", HEMP);
-        regBlockOnly("jute", JUTE);
-        regBlockOnly("sisal", SISAL);
-        regBlockOnly("cold_hemp", COLD_HEMP);
-        regBlockOnly("alpine_flax", ALPINE_FLAX);
-        regBlockOnly("strawberry_bush", STRAWBERRY_BUSH);
+        reg("hemp", HEMP);
+        reg("jute", JUTE);
+        reg("sisal", SISAL);
+        reg("cold_hemp", COLD_HEMP);
+        reg("alpine_flax", ALPINE_FLAX);
+        reg("strawberry_bush", STRAWBERRY_BUSH);
         regBlockOnly("corn", CORN);
         regBlockOnly("wild_corn", WILD_CORN);
         reg("straw_mushroom", STRAW_MUSHROOM);
         reg("matsutake", MATSUTAKE);
         regBlockOnly("rapeseed", RAPESEED);
+        Registry.register(Registries.ITEM, Identifier.of(Ramify.MOD_ID, "corn_block"), CORN_BLOCK);
         reg("wooden_spikes", WOODEN_SPIKES);
     }
 

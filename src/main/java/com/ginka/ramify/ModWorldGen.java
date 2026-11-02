@@ -77,8 +77,7 @@ public final class ModWorldGen {
         // 高山亚麻：草甸/丘陵/山地/石峰，樱花林低权重
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(BiomeKeys.MEADOW, BiomeKeys.WINDSWEPT_HILLS,
-                        BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.WINDSWEPT_FOREST,
-                        BiomeKeys.STONY_PEAKS),
+                        BiomeKeys.WINDSWEPT_GRAVELLY_HILLS, BiomeKeys.WINDSWEPT_FOREST),
                 GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.CHERRY_GROVE),
                 GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_CHERRY);
