@@ -12,14 +12,14 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:jute",
           "properties": {
-            "half": "lower"
+            "half": "bottom"
           }
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ramify:jute_fiber",
+          "name": "ramify:jute_leaf",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -43,7 +43,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:jute",
           "properties": {
-            "half": "lower"
+            "half": "bottom"
           }
         },
         {

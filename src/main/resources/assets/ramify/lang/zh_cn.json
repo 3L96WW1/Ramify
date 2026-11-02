@@ -31,5 +31,7 @@
   "tag.item.c.paper": "纸",
   "advancement.ramify.root.title": "麻 / Ramify",
   "advancement.ramify.root.desc": "纤维、绷带与草药",
-  "item.ramify.hemp_leaf": "麻叶"
+  "item.ramify.hemp_leaf": "麻叶",
+  "item.ramify.jute_leaf": "黄麻叶",
+  "item.ramify.sisal_leaf": "剑麻叶"
 }

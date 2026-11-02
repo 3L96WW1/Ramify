@@ -31,5 +31,7 @@
   "tag.item.c.paper": "Paper",
   "advancement.ramify.root.title": "Ramify",
   "advancement.ramify.root.desc": "Fibers, bandages and herbs",
-  "item.ramify.hemp_leaf": "Hemp Leaf"
+  "item.ramify.hemp_leaf": "Hemp Leaf",
+  "item.ramify.jute_leaf": "Jute Leaf",
+  "item.ramify.sisal_leaf": "Sisal Leaf"
 }

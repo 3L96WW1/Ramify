@@ -12,7 +12,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ramify:sisal_fiber",
+          "name": "ramify:sisal_leaf",
           "functions": [
             {
               "function": "minecraft:set_count",

@@ -15,9 +15,9 @@ import net.minecraft.util.Identifier;
 public final class ModItems {
     // 基础材料
     public static final Item HEMP_LEAF = reg("hemp_leaf", new Item(new Item.Settings()));
+    public static final Item JUTE_LEAF = reg("jute_leaf", new Item(new Item.Settings()));
+    public static final Item SISAL_LEAF = reg("sisal_leaf", new Item(new Item.Settings()));
     public static final Item HEMP_FIBER = reg("hemp_fiber", new Item(new Item.Settings()));
-    public static final Item JUTE_FIBER = reg("jute_fiber", new Item(new Item.Settings()));
-    public static final Item SISAL_FIBER = reg("sisal_fiber", new Item(new Item.Settings()));
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
 
     // 药品
@@ -54,9 +54,9 @@ public final class ModItems {
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(HEMP_LEAF);
+            entries.add(JUTE_LEAF);
+            entries.add(SISAL_LEAF);
             entries.add(HEMP_FIBER);
-            entries.add(JUTE_FIBER);
-            entries.add(SISAL_FIBER);
             entries.add(HEMP_PAPER);
             entries.add(CORN_SEEDS);
         });
