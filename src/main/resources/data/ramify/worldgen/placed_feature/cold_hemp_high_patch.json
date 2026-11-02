@@ -1,0 +1,28 @@
+{
+  "feature": "ramify:cold_hemp_patch",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 1
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 80
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "ramify:height_filter",
+      "min": 221,
+      "max": 320
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

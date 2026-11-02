@@ -40,6 +40,10 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_patch"));
     public static final RegistryKey<PlacedFeature> ALPINE_FLAX_CHERRY =
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_cherry"));
+    public static final RegistryKey<PlacedFeature> COLD_HEMP_HIGH =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "cold_hemp_high_patch"));
+    public static final RegistryKey<PlacedFeature> ALPINE_FLAX_HIGH =
+            RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_high"));
 
     public static void register() {
         HeightFilterPlacementModifier.init();
@@ -74,6 +78,7 @@ public final class ModWorldGen {
                 BiomeKeys.FROZEN_PEAKS, BiomeKeys.JAGGED_PEAKS, BiomeKeys.FROZEN_RIVER);
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, MATSUTAKE_PLACED);
         BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, COLD_HEMP_PLACED);
+        BiomeModifications.addFeature(snowy, GenerationStep.Feature.VEGETAL_DECORATION, COLD_HEMP_HIGH);
 
         // 高山亚麻：Y 96~140，所有非雪地群系
         var alpine = BiomeSelectors.foundInOverworld().and(ctx -> {
@@ -82,6 +87,7 @@ public final class ModWorldGen {
                     && !path.contains("savanna") && !path.equals("grove") && !path.equals("jagged_peaks");
         });
         BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
+        BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_HIGH);
 
         // 油菜花：森林与草原
         BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
