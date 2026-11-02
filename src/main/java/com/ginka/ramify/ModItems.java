@@ -40,6 +40,13 @@ public final class ModItems {
                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 240, 0), 1.0f)
                     .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 240, 0), 1.0f)
                     .build())));
+    public static final Item RAPESEED_SOUP = reg("rapeseed_soup", new Item(new Item.Settings().maxCount(1)
+            .recipeRemainder(Items.BOWL)
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 200, 0), 1.0f)
+                    .build())));
+    public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
     public static final Item CORN_SEEDS = reg("corn_seeds", new SeedsItem(new Item.Settings(), ModBlocks.CORN));
 
     private static Item reg(String name, Item item) {
@@ -65,6 +72,8 @@ public final class ModItems {
             entries.add(CORN);
             entries.add(ROASTED_CORN);
             entries.add(MUSHROOM_SOUP);
+            entries.add(RAPESEED_SOUP);
+            entries.add(RAW_SKEWER);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.HEMP);

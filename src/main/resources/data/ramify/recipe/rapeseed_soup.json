@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ramify:rapeseed"
+    },
+    {
+      "item": "ramify:rapeseed"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "id": "ramify:rapeseed_soup",
+    "count": 1
+  }
+}

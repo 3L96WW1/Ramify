@@ -33,5 +33,7 @@
   "advancement.ramify.root.desc": "Fibers, bandages and herbs",
   "item.ramify.hemp_leaf": "Hemp Leaf",
   "item.ramify.jute_leaf": "Jute Leaf",
-  "item.ramify.sisal_leaf": "Sisal Leaf"
+  "item.ramify.sisal_leaf": "Sisal Leaf",
+  "item.ramify.rapeseed_soup": "Rapeseed Soup",
+  "item.ramify.raw_skewer": "Raw Skewer"
 }

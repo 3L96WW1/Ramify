@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ramify:rapeseed"
+    },
+    {
+      "item": "minecraft:sweet_berries"
+    },
+    {
+      "item": "minecraft:porkchop"
+    }
+  ],
+  "result": {
+    "id": "ramify:raw_skewer",
+    "count": 1
+  }
+}
