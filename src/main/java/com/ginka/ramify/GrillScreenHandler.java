@@ -70,7 +70,7 @@ public class GrillScreenHandler extends ScreenHandler {
 
         // 8 个成品槽，不能放入
         for (int i = 0; i < 8; i++) {
-            this.addSlot(new Slot(inventory, 6 + i, 150, 16 + i * 17) {
+            this.addSlot(new Slot(inventory, 6 + i, 150, 16 + i * 16) {
                 @Override public boolean canInsert(ItemStack stack) { return false; }
             });
         }
