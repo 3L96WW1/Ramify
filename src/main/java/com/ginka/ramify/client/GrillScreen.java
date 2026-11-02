@@ -74,6 +74,14 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         for (int col = 0; col < 9; col++) {
             drawSlot(context, x + 8 + col * 18, y + 248);
         }
+
+        // 右下角工作台 3×3 + 产出
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                drawSlot(context, x + 182 + col * 18, y + 194 + row * 18);
+            }
+        }
+        drawSlot(context, x + 238, y + 212);
     }
 
     private void drawSlot(DrawContext context, int x, int y) {
@@ -94,6 +102,7 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
         context.drawText(this.textRenderer, "进度", 16, 153, 0xAAAAAA, false);
         context.drawText(this.textRenderer, "成品列表", 154, 26, 0xAAAAAA, false);
         context.drawText(this.textRenderer, this.playerInventoryTitle, 10, 178, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "工作台", 174, 178, 0xAAAAAA, false);
         // 成品名称
         for (int i = 0; i < 8; i++) {
             var stack = handler.getOutputStack(i);

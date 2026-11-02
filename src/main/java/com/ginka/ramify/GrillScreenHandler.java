@@ -3,6 +3,7 @@ package com.ginka.ramify;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
@@ -15,7 +16,10 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.input.CraftingRecipeInput;
 import net.minecraft.util.math.BlockPos;
 
 public class GrillScreenHandler extends ScreenHandler {
@@ -26,6 +30,9 @@ public class GrillScreenHandler extends ScreenHandler {
 
     private final Inventory inventory;
     private final PropertyDelegate properties;
+    private final CraftingInventory craftingInventory;
+    private final SimpleInventory craftingResult;
+    private final PlayerEntity owner;
 
     // 客户端构造函数（数据同步用空库存/属性）
     public GrillScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
@@ -52,6 +59,9 @@ public class GrillScreenHandler extends ScreenHandler {
         super(TYPE, syncId);
         this.inventory = inventory;
         this.properties = properties;
+        this.owner = playerInventory.player;
+        this.craftingInventory = new CraftingInventory(this, 3, 3);
+        this.craftingResult = new SimpleInventory(1);
         this.addProperties(properties);
 
         // 十字形原料：上、左、右、下
@@ -75,6 +85,14 @@ public class GrillScreenHandler extends ScreenHandler {
             });
         }
 
+        // 3×3 工作台面板
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                this.addSlot(new Slot(craftingInventory, col + row * 3, 182 + col * 18, 194 + row * 18));
+            }
+        }
+        this.addSlot(new CraftingResultSlot(owner, craftingInventory, craftingResult, 0, 238, 212));
+
         // 玩家背包
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
@@ -83,6 +101,22 @@ public class GrillScreenHandler extends ScreenHandler {
         }
         for (int col = 0; col < 9; col++) {
             this.addSlot(new Slot(playerInventory, col, 8 + col * 18, 248));
+        }
+    }
+
+    @Override
+    public void onContentChanged(Inventory inventory) {
+        super.onContentChanged(inventory);
+        if (inventory == this.craftingInventory && this.owner != null) {
+            var world = this.owner.getWorld();
+            java.util.List<ItemStack> stacks = new java.util.ArrayList<>();
+            for (int i = 0; i < 9; i++) stacks.add(this.craftingInventory.getStack(i));
+            var input = CraftingRecipeInput.create(3, 3, stacks);
+            ItemStack result = world.getRecipeManager()
+                    .getFirstMatch(RecipeType.CRAFTING, input, world)
+                    .map(entry -> entry.value().craft(input, world.getRegistryManager()))
+                    .orElse(ItemStack.EMPTY);
+            this.craftingResult.setStack(0, result);
         }
     }
 
@@ -111,8 +145,11 @@ public class GrillScreenHandler extends ScreenHandler {
         if (s != null && s.hasStack()) {
             ItemStack stack = s.getStack();
             original = stack.copy();
-            if (slot < 14) {
-                if (!this.insertItem(stack, 14, this.slots.size(), true)) return ItemStack.EMPTY;
+            if (slot == 23) {
+                return ItemStack.EMPTY;
+            }
+            if (slot < 23) {
+                if (!this.insertItem(stack, 24, this.slots.size(), true)) return ItemStack.EMPTY;
             } else if (!this.insertItem(stack, 0, 6, false)) {
                 return ItemStack.EMPTY;
             }
