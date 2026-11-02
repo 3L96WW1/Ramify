@@ -130,8 +130,7 @@ public class GrillBlock extends HorizontalFacingBlock implements BlockEntityProv
         Direction facing = c.get(FACING);
         Direction right = facing.rotateYClockwise();
         BlockPos[] positions = new BlockPos[]{
-                controller, controller.offset(right), controller.offset(right.getOpposite()),
-                controller.up(), controller.up().offset(right), controller.up().offset(right.getOpposite())
+                controller, controller.offset(right), controller.offset(right.getOpposite())
         };
         for (BlockPos p : positions) {
             if (world.getBlockState(p).isOf(ModBlocks.GRILL)) {

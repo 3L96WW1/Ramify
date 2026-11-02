@@ -23,13 +23,12 @@ public class GrillItem extends BlockItem {
         Direction right = facing.rotateYClockwise();
         // 控制器放在底排中间，整体宽 3 高 2
         BlockPos[] positions = new BlockPos[]{
-                controller, controller.offset(right), controller.offset(right.getOpposite()),
-                controller.up(), controller.up().offset(right), controller.up().offset(right.getOpposite())
+                controller, controller.offset(right), controller.offset(right.getOpposite())
         };
         for (BlockPos p : positions) {
             if (!world.getBlockState(p).isReplaceable()) return net.minecraft.util.ActionResult.FAIL;
         }
-        for (BlockPos p : new BlockPos[]{controller, controller.offset(right), controller.offset(right.getOpposite())}) {
+        for (BlockPos p : positions) {
             if (!world.getBlockState(p.down()).isSolidBlock(world, p.down())) return net.minecraft.util.ActionResult.FAIL;
         }
         if (!world.isClient) {
@@ -39,12 +38,6 @@ public class GrillItem extends BlockItem {
                     .with(GrillBlock.PART, GrillBlock.Part.BOTTOM_RIGHT).with(GrillBlock.FACING, facing));
             world.setBlockState(controller.offset(right.getOpposite()), ModBlocks.GRILL.getDefaultState()
                     .with(GrillBlock.PART, GrillBlock.Part.BOTTOM_LEFT).with(GrillBlock.FACING, facing));
-            world.setBlockState(controller.up(), ModBlocks.GRILL.getDefaultState()
-                    .with(GrillBlock.PART, GrillBlock.Part.TOP_MIDDLE).with(GrillBlock.FACING, facing));
-            world.setBlockState(controller.up().offset(right), ModBlocks.GRILL.getDefaultState()
-                    .with(GrillBlock.PART, GrillBlock.Part.TOP_RIGHT).with(GrillBlock.FACING, facing));
-            world.setBlockState(controller.up().offset(right.getOpposite()), ModBlocks.GRILL.getDefaultState()
-                    .with(GrillBlock.PART, GrillBlock.Part.TOP_LEFT).with(GrillBlock.FACING, facing));
         }
         context.getStack().decrement(1);
         return net.minecraft.util.ActionResult.success(world.isClient);
