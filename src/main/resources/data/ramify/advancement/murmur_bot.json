@@ -1,0 +1,36 @@
+{
+  "parent": "ramify:root",
+  "display": {
+    "icon": {
+      "id": "ramify:murmur_bot"
+    },
+    "title": {
+      "text": "我喜欢你！请和我生小草莓"
+    },
+    "description": {
+      "text": "菜单嘿嘿喵（",
+      "color": "light_purple"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_bot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "ramify:murmur_bot"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_bot"
+    ]
+  ]
+}
