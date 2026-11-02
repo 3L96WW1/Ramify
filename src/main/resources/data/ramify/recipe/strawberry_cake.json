@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  s",
+    " eb",
+    " ww"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:sugar"
+    },
+    "e": {
+      "item": "minecraft:egg"
+    },
+    "b": {
+      "item": "minecraft:sweet_berries"
+    },
+    "w": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "id": "ramify:strawberry_cake",
+    "count": 1
+  }
+}
