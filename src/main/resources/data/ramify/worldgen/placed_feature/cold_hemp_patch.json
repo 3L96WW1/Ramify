@@ -17,6 +17,11 @@
       "heightmap": "WORLD_SURFACE_WG"
     },
     {
+      "type": "ramify:height_filter",
+      "min": -64,
+      "max": 119
+    },
+    {
       "type": "minecraft:biome"
     }
   ]

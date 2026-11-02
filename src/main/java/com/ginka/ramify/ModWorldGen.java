@@ -42,6 +42,7 @@ public final class ModWorldGen {
             RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(Ramify.MOD_ID, "alpine_flax_cherry"));
 
     public static void register() {
+        HeightFilterPlacementModifier.init();
         // 麻：草原/草甸/普通森林，白桦林与热带草原不长
         var plains = BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS, BiomeKeys.MEADOW);
         var hempLowlands = BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.SUNFLOWER_PLAINS);
@@ -79,7 +80,7 @@ public final class ModWorldGen {
         var alpine = BiomeSelectors.foundInOverworld().and(ctx -> {
             String path = ctx.getBiomeKey().getValue().getPath();
             return !path.contains("snow") && !path.contains("frozen") && !path.contains("ice")
-                    && !path.equals("grove") && !path.equals("jagged_peaks");
+                    && !path.contains("savanna") && !path.equals("grove") && !path.equals("jagged_peaks");
         });
         BiomeModifications.addFeature(alpine, GenerationStep.Feature.VEGETAL_DECORATION, ALPINE_FLAX_PLACED);
 
