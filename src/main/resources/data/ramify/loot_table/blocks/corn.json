@@ -44,8 +44,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ramify:corn",
           "properties": {
-            "half": "bottom",
-            "age": "7"
+            "half": "bottom"
           }
         }
       ],

@@ -1,10 +1,7 @@
 {
   "variants": {
-    "ripe=true": {
+    "": {
       "model": "ramify:block/strawberry_bush_ripe"
-    },
-    "ripe=false": {
-      "model": "ramify:block/strawberry_bush_empty"
     }
   }
 }
