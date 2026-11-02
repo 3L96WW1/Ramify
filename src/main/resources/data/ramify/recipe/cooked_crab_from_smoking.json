@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "ramify:raw_crab"
+  },
+  "result": {
+    "id": "ramify:cooked_crab",
+    "count": 1
+  },
+  "experience": 0.35,
+  "cookingtime": 100
+}
