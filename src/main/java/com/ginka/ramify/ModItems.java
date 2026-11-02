@@ -91,7 +91,10 @@ public final class ModItems {
                     .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1200, 0), 1.0f)
                     .build())));
     public static final Item RAW_LOBSTER = reg("raw_lobster", new Item(new Item.Settings()
-            .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f).build())));
+            .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 0), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0), 1.0f)
+                    .build())));
     public static final Item COOKED_LOBSTER = reg("cooked_lobster", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f).build())));
     public static final Item LOBSTER_SPAWN_EGG = reg("lobster_spawn_egg",
