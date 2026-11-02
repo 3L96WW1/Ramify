@@ -1,0 +1,35 @@
+{
+  "parent": "ramify:root",
+  "display": {
+    "icon": {
+      "id": "ramify:raw_crab"
+    },
+    "title": {
+      "text": "\u5361\u5c3c\u5361\u5c3c\uff1f"
+    },
+    "description": {
+      "text": "\u65f6\u95f4\u505c\u6b62\u5427\uff0c\u4f60\u662f\u591a\u4e48\u7684\u7f8e\u4e3d"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_crab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "ramify:raw_crab"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "get_crab"
+    ]
+  ]
+}

@@ -11,6 +11,7 @@ public class Ramify implements ModInitializer {
         ModSounds.register();
         ModEffects.register();
         ModBlocks.register();
+        ModEntities.register();
         ModItems.register();
         ModTrades.register();
         ModWorldGen.register();

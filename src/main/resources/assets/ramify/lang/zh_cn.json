@@ -38,5 +38,9 @@
   "item.ramify.raw_skewer": "生烤串",
   "block.ramify.cold_hemp": "寒麻",
   "item.ramify.rapeseed": "油菜",
-  "effect.ramify.warmth": "温暖"
+  "effect.ramify.warmth": "温暖",
+  "item.ramify.raw_crab": "生梭子蟹",
+  "item.ramify.cooked_crab": "熟梭子蟹",
+  "item.ramify.crab_spawn_egg": "梭子蟹刷怪蛋",
+  "entity.ramify.crab": "梭子蟹"
 }

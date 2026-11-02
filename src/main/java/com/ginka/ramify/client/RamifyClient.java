@@ -3,6 +3,9 @@ package com.ginka.ramify.client;
 import com.ginka.ramify.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import com.ginka.ramify.ModEntities;
 import net.minecraft.client.render.RenderLayer;
 
 public class RamifyClient implements ClientModInitializer {
@@ -20,5 +23,7 @@ public class RamifyClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MATSUTAKE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.RAPESEED, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WOODEN_SPIKES, RenderLayer.getCutout());
+        EntityModelLayerRegistry.registerModelLayer(CrabModel.LAYER, CrabModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.CRAB, CrabRenderer::new);
     }
 }

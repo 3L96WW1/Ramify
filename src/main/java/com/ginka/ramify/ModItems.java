@@ -50,6 +50,17 @@ public final class ModItems {
                     .build())));
     public static final Item RAW_SKEWER = reg("raw_skewer", new Item(new Item.Settings()
             .food(new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f).build())));
+    public static final Item RAW_CRAB = reg("raw_crab", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(2).saturationModifier(0.1f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 60, 0), 1.0f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 200, 0), 1.0f)
+                    .build())));
+    public static final Item COOKED_CRAB = reg("cooked_crab", new Item(new Item.Settings()
+            .food(new FoodComponent.Builder().nutrition(6).saturationModifier(0.6f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 1200, 0), 1.0f)
+                    .build())));
+    public static final Item CRAB_SPAWN_EGG = reg("crab_spawn_egg",
+            new net.minecraft.item.SpawnEggItem(ModEntities.CRAB, 0xE06A3A, 0xF2C28A, new Item.Settings()));
     public static final Item CORN_SEEDS = reg("corn_seeds", new SeedsItem(new Item.Settings(), ModBlocks.CORN));
 
     private static Item reg(String name, Item item) {
@@ -78,7 +89,10 @@ public final class ModItems {
             entries.add(MUSHROOM_SOUP);
             entries.add(RAPESEED_SOUP);
             entries.add(RAW_SKEWER);
+            entries.add(RAW_CRAB);
+            entries.add(COOKED_CRAB);
         });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> entries.add(CRAB_SPAWN_EGG));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
