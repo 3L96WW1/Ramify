@@ -46,7 +46,7 @@ public final class ModBlocks {
         regBlockOnly("jute", JUTE);
         regBlockOnly("sisal", SISAL);
         regBlockOnly("cold_hemp", COLD_HEMP);
-        reg("strawberry_bush", STRAWBERRY_BUSH);
+        regBlockOnly("strawberry_bush", STRAWBERRY_BUSH);
         regBlockOnly("corn", CORN);
         regBlockOnly("wild_corn", WILD_CORN);
         reg("straw_mushroom", STRAW_MUSHROOM);

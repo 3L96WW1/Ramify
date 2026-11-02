@@ -80,7 +80,6 @@ public final class ModItems {
             entries.add(RAW_SKEWER);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
-            entries.add(ModBlocks.STRAWBERRY_BUSH);
             entries.add(ModBlocks.STRAW_MUSHROOM);
             entries.add(ModBlocks.MATSUTAKE);
         });
