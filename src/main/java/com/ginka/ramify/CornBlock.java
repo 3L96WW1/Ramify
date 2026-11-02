@@ -62,7 +62,8 @@ public class CornBlock extends Block implements Fertilizable {
                     || floor.isOf(net.minecraft.block.Blocks.COARSE_DIRT)
                     || floor.isOf(net.minecraft.block.Blocks.PODZOL);
         }
-        return floor.isOf(net.minecraft.block.Blocks.FARMLAND);
+        return floor.isOf(net.minecraft.block.Blocks.FARMLAND)
+                || floor.isOf(net.minecraft.block.Blocks.GRASS_BLOCK);
     }
 
     @Override
@@ -125,6 +126,31 @@ public class CornBlock extends Block implements Fertilizable {
         if (above.isOf(this) && above.get(HALF) == BlockHalf.TOP) {
             world.setBlockState(pos.up(), above.with(AGE, age), Block.NOTIFY_LISTENERS);
         }
+    }
+
+    @Override
+    protected net.minecraft.util.ActionResult onUse(BlockState state, World world, BlockPos pos,
+                                                     net.minecraft.entity.player.PlayerEntity player,
+                                                     net.minecraft.util.hit.BlockHitResult hit) {
+        BlockPos bottomPos = state.get(HALF) == BlockHalf.TOP ? pos.down() : pos;
+        BlockState bottom = world.getBlockState(bottomPos);
+        if (!bottom.isOf(this) || bottom.get(HALF) != BlockHalf.BOTTOM || bottom.get(AGE) < 7) {
+            return net.minecraft.util.ActionResult.PASS;
+        }
+        if (!world.isClient) {
+            int count = 1 + world.random.nextInt(2);
+            net.minecraft.block.Block.dropStack(world, bottomPos,
+                    new net.minecraft.item.ItemStack(ModItems.CORN, count));
+            net.minecraft.block.Block.dropStack(world, bottomPos,
+                    new net.minecraft.item.ItemStack(ModItems.CORN_SEEDS, 1));
+            int newAge = 3;
+            world.setBlockState(bottomPos, bottom.with(AGE, newAge), NOTIFY_LISTENERS);
+            BlockState above = world.getBlockState(bottomPos.up());
+            if (above.isOf(this) && above.get(HALF) == BlockHalf.TOP) {
+                world.setBlockState(bottomPos.up(), above.with(AGE, newAge), NOTIFY_LISTENERS);
+            }
+        }
+        return net.minecraft.util.ActionResult.success(world.isClient);
     }
 
     @Override

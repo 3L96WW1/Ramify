@@ -21,8 +21,9 @@ public class SeedsItem extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
-        if (!world.getBlockState(pos).isOf(net.minecraft.block.Blocks.FARMLAND)
-                || !world.getBlockState(pos.up()).isAir()) {
+        boolean soil = world.getBlockState(pos).isOf(net.minecraft.block.Blocks.FARMLAND)
+                || world.getBlockState(pos).isOf(net.minecraft.block.Blocks.GRASS_BLOCK);
+        if (!soil || !world.getBlockState(pos.up()).isAir()) {
             return ActionResult.PASS;
         }
         ItemStack stack = context.getStack();
