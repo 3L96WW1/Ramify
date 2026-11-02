@@ -64,5 +64,6 @@
   "item.ramify.grilled_fish": "Grilled Fish",
   "item.ramify.grilled_potato": "Grilled Potato",
   "item.ramify.grilled_mushroom": "Grilled Mushroom",
-  "item.ramify.grilled_apple": "Grilled Apple"
+  "item.ramify.grilled_apple": "Grilled Apple",
+  "effect.ramify.hearty": "Hearty"
 }

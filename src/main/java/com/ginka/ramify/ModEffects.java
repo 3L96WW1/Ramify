@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 public final class ModEffects {
     public static final StatusEffect ANTI_INFECTION = new AntiInfectionEffect();
     public static final StatusEffect WARMTH = new WarmthEffect();
+    public static final StatusEffect HEARTY = new HeartyEffect();
 
     public static RegistryEntry<StatusEffect> antiInfection() {
         return Registries.STATUS_EFFECT.getEntry(ANTI_INFECTION);
@@ -19,9 +20,14 @@ public final class ModEffects {
         return Registries.STATUS_EFFECT.getEntry(WARMTH);
     }
 
+    public static RegistryEntry<StatusEffect> hearty() {
+        return Registries.STATUS_EFFECT.getEntry(HEARTY);
+    }
+
     public static void register() {
         Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "anti_infection"), ANTI_INFECTION);
         Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "warmth"), WARMTH);
+        Registry.register(Registries.STATUS_EFFECT, Identifier.of(Ramify.MOD_ID, "hearty"), HEARTY);
     }
 
     private ModEffects() {
