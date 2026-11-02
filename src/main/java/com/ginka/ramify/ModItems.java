@@ -19,7 +19,8 @@ public final class ModItems {
     public static final Item HEMP_FIBER = reg("hemp_fiber", new Item(new Item.Settings()));
     public static final Item HEMP_PAPER = reg("hemp_paper", new Item(new Item.Settings()));
     public static final Item RAPESEED = reg("rapeseed", new Item(new Item.Settings()));
-    public static final Item MURMUR_BOT = reg("murmur_bot", new Item(new Item.Settings()));
+    public static final Item MURMUR_BOT = reg("murmur_bot",
+            new MurmurBotItem(new Item.Settings().rarity(net.minecraft.util.Rarity.EPIC)));
     public static final Item ROSE = reg("rose", new RoseItem(new Item.Settings()));
     public static final Item ROSE_SEEDS = reg("rose_seeds", new RoseSeedsItem(new Item.Settings(), ModBlocks.ROSE_BUSH));
 
