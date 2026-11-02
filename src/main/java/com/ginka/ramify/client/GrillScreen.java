@@ -89,10 +89,10 @@ public class GrillScreen extends HandledScreen<GrillScreenHandler> {
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         context.drawText(this.textRenderer, this.title, 10, 6, 0xFFFFFF, false);
-        context.drawText(this.textRenderer, "原料", 16, 30, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "燃料", 16, 112, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "进度", 16, 154, 0xAAAAAA, false);
-        context.drawText(this.textRenderer, "成品列表", 154, 30, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "原料", 16, 26, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "燃料", 16, 108, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "进度", 16, 153, 0xAAAAAA, false);
+        context.drawText(this.textRenderer, "成品列表", 154, 26, 0xAAAAAA, false);
         context.drawText(this.textRenderer, this.playerInventoryTitle, 10, 178, 0xAAAAAA, false);
     }
 
