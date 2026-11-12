@@ -8,18 +8,7 @@
       "text": "我在呢，我一直都在"
     },
     "description": {
-      "text": "第一眼孩子叫什么都想好了\n",
-      "color": "white",
-      "extra": [
-        {
-          "text": "这不给那谁嘛（“\n",
-          "color": "light_purple"
-        },
-        {
-          "text": "克拉拉：你的表白烂透了",
-          "color": "dark_gray"
-        }
-      ]
+      "text": ""
     },
     "frame": "challenge",
     "show_toast": true,
