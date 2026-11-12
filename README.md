@@ -8,7 +8,7 @@ Minecraft **1.21.1 / Fabric** 模组：麻类纤维植物、医疗用品、野�
 | 加载器 | Fabric Loader ≥ 0.16，需要 Fabric API |
 | Java | **21** |
 | 模组 id | `ramify` |
-| 当前版本 | `0.2.0-beta+1.21.1` |
+| 当前版本 | `1.0.0+1.21.1` |
 | 代码许可 | MPL-2.0 |
 | 贴图/图标 | © GINKA_3L96WW1 |
 

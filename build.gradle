@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-version = '0.2.0-beta+1.21.1'
+version = '1.0.0+1.21.1'
 group = 'com.ginka.ramify'
 base { archivesName = 'ramify' }
 

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "ramify",
   "version": "${version}",
-  "name": "\u9ebb / Ramify",
-  "description": "\u9ebb / Ramify \u2014\u2014 \u7ea4\u7ef4\u690d\u7269\u3001\u7ef7\u5e26\u4e0e\u8349\u836f\uff08Minecraft 1.21.1 Fabric\uff09",
+  "name": "麻 / Ramify",
+  "description": "麻 / Ramify —— 纤维植物、医疗用品、海岸生物与户外烧烤（Minecraft 1.21.1 Fabric）",
   "authors": [
     "GINKA_3L96WW1"
   ],
@@ -23,5 +23,11 @@
     "java": ">=21",
     "fabric-api": "*"
   },
-  "accessWidener": "ramify.accesswidener"
+  "accessWidener": "ramify.accesswidener",
+  "icon": "assets/ramify/icon.png",
+  "contact": {
+    "homepage": "https://github.com/3L96WW1/ramify",
+    "sources": "https://github.com/3L96WW1/ramify",
+    "issues": "https://github.com/3L96WW1/ramify/issues"
+  }
 }
